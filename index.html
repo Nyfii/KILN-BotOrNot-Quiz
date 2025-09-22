@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Bot or Not — Quick Quiz</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="min-h-screen flex flex-col bg-gradient-to-br from-[#134383] to-[#009faf] text-slate-100 antialiased relative overflow-hidden">
+        <!-- Decorative blurred shapes for side interest -->
+        <div class="absolute top-20 left-0 w-72 h-72 bg-[#009faf]/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-40 right-0 w-80 h-80 bg-[#134383]/30 rounded-full blur-3xl"></div>
+
+        <header class="w-full max-w-5xl mx-auto mt-6 mb-6 px-4 relative z-10">
+            <div class="flex items-center gap-3">
+                <div class="h-10 w-10 rounded-2xl bg-gradient-to-tr from-[#134383] to-[#009faf] flex items-center justify-center text-white font-semibold">Q</div>
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-bold">Bot or Not - Quick Quiz</h1>
+                    <p class="text-xs text-white/70">General AI knowledge</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-1 w-full max-w-5xl mx-auto flex items-stretch px-4 relative z-10">
+            <div class="relative w-full rounded-3xl bg-white/10 backdrop-blur-xl shadow-2xl ring-1 ring-white/15 overflow-hidden flex flex-col">
+                <div class="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-white/20 blur-3xl"></div>
+                <div class="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-[#009faf]/20 blur-3xl"></div>
+
+                <div class="p-8 sm:p-12 flex-1 flex flex-col">
+                    <p class="text-center text-sm uppercase tracking-wide text-white/80">Question <span id="qIndex">1</span><span id="qTotal" class="opacity-70"></span></p>
+                    <p id="question" class="mt-3 text-center text-2xl sm:text-3xl font-semibold leading-snug text-white"></p>
+
+                    <!-- Answer containers -->
+                    <div id="answers" class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto w-full"></div>
+
+                    <!-- For image choice questions -->
+                    <div id="image-answers" class="mt-8 hidden grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto w-full"></div>
+
+                    <div id="feedback" class="hidden mt-6 max-w-3xl mx-auto w-full rounded-2xl bg-white/10 p-5 ring-1 ring-white/10 text-sm"></div>
+
+                    <div class="mt-auto pt-8 flex items-center gap-4">
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div id="progress" class="h-full w-0 bg-gradient-to-r from-[#134383] to-[#009faf]"></div>
+                        </div>
+                        <button id="nextBtn" class="px-5 py-2.5 rounded-xl bg-[#009faf] text-white font-medium hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[#009faf]/60 disabled:opacity-50 disabled:cursor-not-allowed transition">Next</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="w-full bg-white text-gray-800 text-center py-6 mt-8 relative z-10">
+            Footer space (customize me later)
+        </footer>
+
+        <script>
+            const questions = [
+                {
+                    type: "text",
+                    q: "Which of the following best describes a large language model (LLM)?",
+                    answers: [
+                        { text: "A database of facts curated by humans", correct: false },
+                        { text: "A neural network trained to predict the next token in text", correct: true },
+                        { text: "A program that searches the web in real time", correct: false },
+                        { text: "A rule-based expert system with hand-written logic", correct: false }
+                    ],
+                    explanation: "LLMs are probabilistic sequence models trained on massive corpora to predict the next token. They can appear knowledgeable without storing a canonical database of facts."
+                },
+                {
+                    type: "text",
+                    q: "What is the main purpose of fine-tuning a pretrained AI model?",
+                    answers: [
+                        { text: "To permanently increase the model's context window", correct: false },
+                        { text: "To adapt a general model to a narrower task or style using additional data", correct: true },
+                        { text: "To convert the model from text to image generation", correct: false },
+                        { text: "To compress the model into fewer parameters without loss", correct: false }
+                    ],
+                    explanation: "Fine-tuning specializes a pretrained model on domain- or task-specific examples, aligning behavior and improving performance on that area."
+                },
+                {
+                    type: "image",
+                    q: "Which one is real?",
+                    images: [
+                        { src: "https://placekitten.com/400/250", correct: true },
+                        { src: "https://placebear.com/400/250", correct: false }
+                    ],
+                    explanation: "The left image shows a real cat, while the right one is generated/altered."
+                }
+            ]
+
+            let index = 0
+            let locked = false
+
+            const qEl = document.getElementById("question")
+            const aWrap = document.getElementById("answers")
+            const imgWrap = document.getElementById("image-answers")
+            const fb = document.getElementById("feedback")
+            const nextBtn = document.getElementById("nextBtn")
+            const qIndex = document.getElementById("qIndex")
+            const qTotal = document.getElementById("qTotal")
+            const progress = document.getElementById("progress")
+
+            qTotal.textContent = ` / ${questions.length}`
+
+            function render() {
+                const item = questions[index]
+                qIndex.textContent = index + 1
+                qEl.textContent = item.q
+                fb.classList.add("hidden")
+                fb.textContent = ""
+                nextBtn.disabled = true
+                locked = false
+                aWrap.innerHTML = ""
+                imgWrap.innerHTML = ""
+                aWrap.classList.add("hidden")
+                imgWrap.classList.add("hidden")
+
+                if (item.type === "text") {
+                    aWrap.classList.remove("hidden")
+                    item.answers.forEach(a => {
+                        const btn = document.createElement("button")
+                        btn.className = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
+                        btn.setAttribute("data-correct", a.correct)
+                        btn.textContent = a.text
+                        btn.onclick = () => choose(btn, item.type)
+                        aWrap.appendChild(btn)
+                    })
+                } else if (item.type === "image") {
+                    imgWrap.classList.remove("hidden")
+                    item.images.forEach(img => {
+                        const btn = document.createElement("button")
+                        btn.className = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
+                        btn.setAttribute("data-correct", img.correct)
+                        const imageEl = document.createElement("img")
+                        imageEl.src = img.src
+                        imageEl.alt = "Option"
+                        imageEl.className = "w-full h-60 object-cover"
+                        btn.appendChild(imageEl)
+                        btn.onclick = () => choose(btn, item.type)
+                        imgWrap.appendChild(btn)
+                    })
+                }
+
+                const pct = ((index) / questions.length) * 100
+                progress.style.width = pct + "%"
+            }
+
+            function choose(btn, type) {
+                if (locked) return
+                locked = true
+                const correct = btn.getAttribute("data-correct") === "true"
+                const container = type === "text" ? aWrap : imgWrap
+                Array.from(container.children).forEach(b => {
+                    const isCorrect = b.getAttribute("data-correct") === "true"
+                    b.classList.remove("hover:-translate-y-0.5", "hover:shadow-lg")
+                    b.classList.add("opacity-90")
+                    if (isCorrect) {
+                        b.classList.remove("border-white/20", "bg-white/10")
+                        b.classList.add("bg-emerald-500/20", "border-emerald-400/60")
+                    } else {
+                        b.classList.remove("border-white/20", "bg-white/10")
+                        b.classList.add("bg-rose-500/20", "border-rose-400/60")
+                    }
+                    b.disabled = true
+                })
+                fb.innerHTML = correct
+                    ? `✅ Nice! ${questions[index].explanation}`
+                    : `❌ Not quite. ${questions[index].explanation}`
+                fb.classList.remove("hidden")
+                nextBtn.disabled = false
+            }
+
+            nextBtn.addEventListener("click", () => {
+                index = (index + 1) % questions.length
+                render()
+            })
+
+            render()
+        </script>
+    </body>
+</html>
