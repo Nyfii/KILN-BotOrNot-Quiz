@@ -23,27 +23,25 @@
 
         <main class="flex-1 w-full max-w-5xl mx-auto flex items-stretch px-4 relative z-10">
             <div class="relative w-full rounded-3xl bg-white/10 backdrop-blur-xl shadow-2xl ring-1 ring-white/15 overflow-hidden flex flex-col">
-                <div class="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-white/20 blur-3xl"></div>
-                <div class="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-[#009faf]/20 blur-3xl"></div>
+                <div class="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-white/20 blur-3xl -z-10"></div>
+                <div class="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-[#009faf]/20 blur-3xl -z-10"></div>
 
                 <div class="p-8 sm:p-12 flex-1 flex flex-col">
                     <p class="text-center text-sm uppercase tracking-wide text-white/80">Question <span id="qIndex">1</span><span id="qTotal" class="opacity-70"></span></p>
                     <p id="question" class="mt-3 text-center text-2xl sm:text-3xl font-semibold leading-snug text-white"></p>
 
-                    <!-- Answer containers -->
                     <div id="answers" class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto w-full"></div>
 
-                    <!-- For image choice questions -->
                     <div id="image-answers" class="mt-8 hidden grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto w-full"></div>
 
                     <div id="feedback" class="hidden mt-6 max-w-3xl mx-auto w-full rounded-2xl bg-white/10 p-5 ring-1 ring-white/10 text-sm"></div>
 
-                    <div class="mt-auto pt-8 flex items-center gap-4">
-                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
-                            <div id="progress" class="h-full w-0 bg-gradient-to-r from-[#134383] to-[#009faf]"></div>
-                        </div>
-                        <button id="nextBtn" class="px-5 py-2.5 rounded-xl bg-[#009faf] text-white font-medium hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[#009faf]/60 disabled:opacity-50 disabled:cursor-not-allowed transition">Next</button>
+                    <div class="mt-auto pt-8 flex justify-end">
+                        <button id="nextBtn" class="px-5 py-2.5 rounded-xl bg-[#009faf] text-white font-medium hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[#009faf]/60 disabled:opacity-50 transition">
+                            Next
+                        </button>
                     </div>
+
                 </div>
             </div>
         </main>
@@ -77,16 +75,79 @@
                     explanation: "Fine-tuning specializes a pretrained model on domain- or task-specific examples, aligning behavior and improving performance on that area."
                 },
                 {
+                    type: "text",
+                    q: "Q1?",
+                    answers: [
+                        { text: "To permanently increase the model's context window", correct: false },
+                        { text: "To adapt a general model to a narrower task or style using additional data", correct: true },
+                        { text: "To convert the model from text to image generation", correct: false },
+                        { text: "To compress the model into fewer parameters without loss", correct: false }
+                    ],
+                    explanation: "Fine-tuning specializes a pretrained model on domain- or task-specific examples, aligning behavior and improving performance on that area."
+                },
+                {
                     type: "image",
                     q: "Which one is real?",
                     images: [
-                        { src: "https://placekitten.com/400/250", correct: true },
+                        { src: "https://placecats.com/400/250", correct: true },
                         { src: "https://placebear.com/400/250", correct: false }
                     ],
                     explanation: "The left image shows a real cat, while the right one is generated/altered."
                 }
             ]
 
+            const questionElement = document.getElementById("question")
+            const answersElement = document.getElementById("answers")
+            const nextButton = document.getElementById("nextBtn")
+ 
+            let doQuestionsInOrder = true;
+            let currentQuestionIndex = 0;
+
+            answerButtonStyles = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
+            imageButtonStyles = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
+
+            function renderQuestion(i) {
+                //Clean Up
+                nextButton.disable = true;
+                answersElement.innerHTML = "";
+
+                questionElement.textContent = questions[i].q;
+                if (questions[i].type === "text") {
+                    //Display Text Question
+                    questions[i].answers.forEach(a => {
+                        const button = document.createElement("button");
+                        button.className = answerButtonStyles;
+                        button.setAttribute("data-correct", a.correct);
+                        button.textContent = a.text;
+                        button.onclick = () => choose(button, questions[i].type);
+                        answersElement.appendChild(button);
+                    });
+                } else {
+                    console.log("No text question found");
+                }
+            }
+
+            function choose(button, type) {
+                const isCorrect = button.getAttribute("data-correct") === "true";
+                if (isCorrect) {
+                    nextButton.disable = false;
+                    console.log("Correct!");
+                } else {
+                    nextButton.disable = false;
+                    console.log("Incorrect.");
+                }
+            }
+
+            nextButton.addEventListener("click", () => {
+                if (doQuestionsInOrder) {
+                    currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+                }
+                renderQuestion(currentQuestionIndex);
+            });
+
+            renderQuestion(currentQuestionIndex);
+
+            /*
             let index = 0
             let locked = false
 
@@ -107,7 +168,7 @@
                 qEl.textContent = item.q
                 fb.classList.add("hidden")
                 fb.textContent = ""
-                nextBtn.disabled = true
+                // nextBtn.disabled = true
                 locked = false
                 aWrap.innerHTML = ""
                 imgWrap.innerHTML = ""
@@ -166,15 +227,17 @@
                     ? `✅ Nice! ${questions[index].explanation}`
                     : `❌ Not quite. ${questions[index].explanation}`
                 fb.classList.remove("hidden")
-                nextBtn.disabled = false
+                // nextBtn.disabled = false
             }
 
             nextBtn.addEventListener("click", () => {
                 index = (index + 1) % questions.length
+                console.log("Hello")
                 render()
             })
 
             render()
+            */
         </script>
     </body>
 </html>
