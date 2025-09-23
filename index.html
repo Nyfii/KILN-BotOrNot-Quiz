@@ -58,14 +58,15 @@
             const feedbackElement = document.getElementById("feedback")
             const nextButton = document.getElementById("nextBtn")
  
-            let doQuestionsInOrder = true;
+            let doQuestionsInOrder = false;
             let currentQuestionIndex = 0;
+            const minIntervalBetweenQuestions = 5;
+            const lastQuestions = [0];
 
             answerButtonStyles = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
             imageButtonStyles = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
 
             function renderQuestion(index) {
-                //Clean Up
                 nextButton.disabled = true;
                 answersElement.innerHTML = "";
                 feedbackElement.classList.add("hidden");
@@ -79,6 +80,7 @@
                         button.textContent = questions[index].answers[i];
                         button.onclick = () => choose(button);
                         answersElement.appendChild(button);
+                    }
                 } else {
                     console.log("No text question found");
                 }
@@ -107,11 +109,19 @@
             nextButton.addEventListener("click", () => {
                 if (doQuestionsInOrder) {
                     currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+                } else {
+                    currentQuestionIndex = Math.floor(Math.random() * questions.length) % questions.length;
+                    while (lastQuestions.includes(currentQuestionIndex)) {
+                        currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
+                    }
+                }
+                lastQuestions.push(currentQuestionIndex);
+                if (lastQuestions.length > minIntervalBetweenQuestions) {
+                    lastQuestions.shift();
                 }
                 renderQuestion(currentQuestionIndex);
             });
 
-            console.log(window.BOT_OR_NOT_DATA);
             renderQuestion(currentQuestionIndex);
 
 
