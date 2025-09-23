@@ -1,4 +1,4 @@
-[
+window.BOT_OR_NOT_DATA = [
     {
         "question": "Welche Programmiersprache wird besonders häufig für KI-Entwicklung genutzt?",
         "answers": [

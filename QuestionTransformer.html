@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>YAML → JSON Merger</title>
+        <title>YBKI -> JSON Merger</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
             :root { color-scheme: dark; }
@@ -27,7 +27,7 @@
                 <div class="row" style="margin-bottom: 12px">
                     <input id="files" type="file" multiple accept=".ybki,text" />
                     <button id="merge" class="btn accent" disabled>Parse & Merge</button>
-                    <button id="download" class="btn" disabled>Download JSON</button>
+                    <button id="download" class="btn" disabled>Download JS</button>
                 </div>
                 <pre id="out">Select .ybki files and click "Parse & Merge".</pre>
             </div>
@@ -74,11 +74,12 @@
             });
 
             downloadButton.addEventListener("click", () => {
-                const blob = new Blob([JSON.stringify(mergedData, null, 4)], { type: "application/json" });
+                const blob = new Blob(["window.BOT_OR_NOT_DATA = " + JSON.stringify(mergedData, null, 4)], { type: "application/json" });
+                console.log(blob);
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement("a");
                 a.href = url;
-                a.download = "Questions.json";
+                a.download = "Questions.js";
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);

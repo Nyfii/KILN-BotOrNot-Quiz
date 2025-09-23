@@ -7,7 +7,6 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="min-h-screen flex flex-col bg-gradient-to-br from-[#134383] to-[#009faf] text-slate-100 antialiased relative overflow-hidden">
-        <!-- Decorative blurred shapes for side interest -->
         <div class="absolute top-20 left-0 w-72 h-72 bg-[#009faf]/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-40 right-0 w-80 h-80 bg-[#134383]/30 rounded-full blur-3xl"></div>
 
@@ -49,9 +48,10 @@
         <footer class="w-full bg-white text-gray-800 text-center py-6 mt-8 relative z-10">
             Footer space (customize me later)
         </footer>
-
+    
+        <script src="Questions/Questions.js"></script>
         <script>
-            const questions = [];
+            const questions = window.BOT_OR_NOT_DATA;
 
             const questionElement = document.getElementById("question")
             const answersElement = document.getElementById("answers")
@@ -64,23 +64,21 @@
             answerButtonStyles = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
             imageButtonStyles = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
 
-            function renderQuestion(i) {
+            function renderQuestion(index) {
                 //Clean Up
                 nextButton.disabled = true;
                 answersElement.innerHTML = "";
                 feedbackElement.classList.add("hidden");
 
-                questionElement.textContent = questions[i].q;
-                if (questions[i].type === "text") {
-                    //Display Text Question
-                    questions[i].answers.forEach(a => {
+                questionElement.textContent = questions[index].question;
+                if (questions[index].hasOwnProperty("answers")) {
+                    for (let i = 0; i < questions[index].answers.length; i++) {
                         const button = document.createElement("button");
                         button.className = answerButtonStyles;
-                        button.setAttribute("data-correct", a.correct);
-                        button.textContent = a.text;
+                        button.setAttribute("data-correct", i == 0 ? true : false);
+                        button.textContent = questions[index].answers[i];
                         button.onclick = () => choose(button);
                         answersElement.appendChild(button);
-                    });
                 } else {
                     console.log("No text question found");
                 }
@@ -113,15 +111,10 @@
                 renderQuestion(currentQuestionIndex);
             });
 
-            function loadAndInitQuestions() {
-                // Get JSON from Question directory.
+            console.log(window.BOT_OR_NOT_DATA);
+            renderQuestion(currentQuestionIndex);
 
 
-                renderQuestion(currentQuestionIndex);
-            }
-
-
-            loadAndInitQuestions();
             /*
             let index = 0
             let locked = false
