@@ -1,0 +1,72 @@
+[
+    {
+        "question": "Welche Programmiersprache wird besonders häufig für KI-Entwicklung genutzt?",
+        "answers": [
+            "Python",
+            "Java",
+            "C++",
+            "PHP"
+        ],
+        "explanation": "Python ist eine sehr einfach zu verwendene Sprache, in der es viele Bibliotheken und Frameworks gibt. Performancekritische Komponenten sind meist in C++ geschrieben."
+    },
+    {
+        "question": "Welche KI-Anwendung hat das Potential, demokratische Wahlen zu beeinflussen?",
+        "answers": [
+            "Alle Antworten sind richtig",
+            "Deepfake-Videos",
+            "Empfehlungssysteme in sozialen Medien",
+            "Automatische Nachrichten-Generierung"
+        ],
+        "explanation": "Deepfakes, Empfehlungssysteme und automatische Nachrichten können jeweils das Wahlverhalten manipuliern."
+    },
+    {
+        "question": "Welches Land hat 2024 das weltweit erste umfassende KI-Gesetz (\"AI-Act\") verabschiedet?",
+        "answers": [
+            "Europäische Union",
+            "USA",
+            "China",
+            "Japan"
+        ],
+        "explanation": "Sie hat klare Regeln zur Sicherheit, Transparenz und Risikoeinstufung von KI-Systemen eingeführt."
+    },
+    {
+        "question": "Welches dieser Beispiele ist ein Deepfake?",
+        "answers": [
+            "Ein manipuliertes Video, in dem eine Person Worte sagt, die sie nie gesagt hat",
+            "Ein Roboter, der Auto fährt",
+            "Ein Computerspiel mit KI-Gegnern",
+            "Eine App, die deine Schritte zählt"
+        ],
+        "explanation": "..."
+    },
+    {
+        "question": "Wofür steht die Abkürzung \"AI\"?",
+        "answers": [
+            "Algorithmic Interface",
+            "Automatic Interaction",
+            "Artificial Intelligence",
+            "Advanced Innovation"
+        ],
+        "explanation": "..."
+    },
+    {
+        "question": "Wann wurde der Begriff \"Künstliche Intelligenz\" offiziell eingeführt?",
+        "answers": [
+            "1956",
+            "1936",
+            "1972",
+            "1995"
+        ],
+        "explanation": "..."
+    },
+    {
+        "question": "What is A Dog?",
+        "answers": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "explanation": "Very cute Animal :)"
+    }
+]

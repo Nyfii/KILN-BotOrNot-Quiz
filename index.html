@@ -72,12 +72,14 @@
                 feedbackElement.classList.add("hidden");
 
                 questionElement.textContent = questions[index].question;
+                randomOffset = Math.floor(Math.random() * (questions[index].answers.length));
                 if (questions[index].hasOwnProperty("answers")) {
                     for (let i = 0; i < questions[index].answers.length; i++) {
+                        valueWithOffset = (i + randomOffset) % questions[index].answers.length;
                         const button = document.createElement("button");
                         button.className = answerButtonStyles;
-                        button.setAttribute("data-correct", i == 0 ? true : false);
-                        button.textContent = questions[index].answers[i];
+                        button.setAttribute("data-correct", valueWithOffset == 0 ? true : false);
+                        button.textContent = questions[index].answers[valueWithOffset];
                         button.onclick = () => choose(button);
                         answersElement.appendChild(button);
                     }
