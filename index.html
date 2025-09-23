@@ -16,7 +16,7 @@
                 <div class="h-10 w-10 rounded-2xl bg-gradient-to-tr from-[#134383] to-[#009faf] flex items-center justify-center text-white font-semibold">Q</div>
                 <div>
                     <h1 class="text-2xl sm:text-3xl font-bold">Bot or Not - Quick Quiz</h1>
-                    <p class="text-xs text-white/70">General AI knowledge</p>
+                    <p class="text-xs text-white/70">Bot or Not</p>
                 </div>
             </div>
         </header>
@@ -27,7 +27,7 @@
                 <div class="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-[#009faf]/20 blur-3xl -z-10"></div>
 
                 <div class="p-8 sm:p-12 flex-1 flex flex-col">
-                    <p class="text-center text-sm uppercase tracking-wide text-white/80">Question <span id="qIndex">1</span><span id="qTotal" class="opacity-70"></span></p>
+                    <p class="text-center text-sm uppercase tracking-wide text-white/80">Question <span id="questionIndex">1</span><span id="qTotal" class="opacity-70"></span></p>
                     <p id="question" class="mt-3 text-center text-2xl sm:text-3xl font-semibold leading-snug text-white"></p>
 
                     <div id="answers" class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto w-full"></div>
@@ -98,6 +98,7 @@
 
             const questionElement = document.getElementById("question")
             const answersElement = document.getElementById("answers")
+            const feedbackElement = document.getElementById("feedback")
             const nextButton = document.getElementById("nextBtn")
  
             let doQuestionsInOrder = true;
@@ -108,8 +109,9 @@
 
             function renderQuestion(i) {
                 //Clean Up
-                nextButton.disable = true;
+                nextButton.disabled = true;
                 answersElement.innerHTML = "";
+                feedbackElement.classList.add("hidden");
 
                 questionElement.textContent = questions[i].q;
                 if (questions[i].type === "text") {
@@ -119,7 +121,7 @@
                         button.className = answerButtonStyles;
                         button.setAttribute("data-correct", a.correct);
                         button.textContent = a.text;
-                        button.onclick = () => choose(button, questions[i].type);
+                        button.onclick = () => choose(button);
                         answersElement.appendChild(button);
                     });
                 } else {
@@ -127,15 +129,24 @@
                 }
             }
 
-            function choose(button, type) {
-                const isCorrect = button.getAttribute("data-correct") === "true";
-                if (isCorrect) {
-                    nextButton.disable = false;
-                    console.log("Correct!");
-                } else {
-                    nextButton.disable = false;
-                    console.log("Incorrect.");
-                }
+            function choose(button) {
+                let isCorrect = button.getAttribute("data-correct") === "true";
+                answersElement.querySelectorAll("button").forEach(button => {
+                    const isCorrect = button.getAttribute("data-correct") === "true";
+                    if (isCorrect) {
+                        nextButton.disabled = false;
+                        button.classList.remove("border-white/20", "bg-white/10")
+                        button.classList.add("bg-emerald-500/20", "border-emerald-400/60")
+                    } else {
+                        nextButton.disabled = false;
+                        button.classList.remove("border-white/20", "bg-white/10")
+                        button.classList.add("bg-rose-500/20", "border-rose-400/60")
+                    }
+                });
+                feedbackElement.innerHTML = isCorrect
+                    ? `Richtig! ${questions[currentQuestionIndex].explanation}`
+                    : `Leider Falsch. ${questions[currentQuestionIndex].explanation}`;
+                feedbackElement.classList.remove("hidden");
             }
 
             nextButton.addEventListener("click", () => {
