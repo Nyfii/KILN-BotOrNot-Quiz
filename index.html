@@ -51,50 +51,7 @@
         </footer>
 
         <script>
-            const questions = [
-                {
-                    type: "text",
-                    q: "Which of the following best describes a large language model (LLM)?",
-                    answers: [
-                        { text: "A database of facts curated by humans", correct: false },
-                        { text: "A neural network trained to predict the next token in text", correct: true },
-                        { text: "A program that searches the web in real time", correct: false },
-                        { text: "A rule-based expert system with hand-written logic", correct: false }
-                    ],
-                    explanation: "LLMs are probabilistic sequence models trained on massive corpora to predict the next token. They can appear knowledgeable without storing a canonical database of facts."
-                },
-                {
-                    type: "text",
-                    q: "What is the main purpose of fine-tuning a pretrained AI model?",
-                    answers: [
-                        { text: "To permanently increase the model's context window", correct: false },
-                        { text: "To adapt a general model to a narrower task or style using additional data", correct: true },
-                        { text: "To convert the model from text to image generation", correct: false },
-                        { text: "To compress the model into fewer parameters without loss", correct: false }
-                    ],
-                    explanation: "Fine-tuning specializes a pretrained model on domain- or task-specific examples, aligning behavior and improving performance on that area."
-                },
-                {
-                    type: "text",
-                    q: "Q1?",
-                    answers: [
-                        { text: "To permanently increase the model's context window", correct: false },
-                        { text: "To adapt a general model to a narrower task or style using additional data", correct: true },
-                        { text: "To convert the model from text to image generation", correct: false },
-                        { text: "To compress the model into fewer parameters without loss", correct: false }
-                    ],
-                    explanation: "Fine-tuning specializes a pretrained model on domain- or task-specific examples, aligning behavior and improving performance on that area."
-                },
-                {
-                    type: "image",
-                    q: "Which one is real?",
-                    images: [
-                        { src: "https://placecats.com/400/250", correct: true },
-                        { src: "https://placebear.com/400/250", correct: false }
-                    ],
-                    explanation: "The left image shows a real cat, while the right one is generated/altered."
-                }
-            ]
+            const questions = [];
 
             const questionElement = document.getElementById("question")
             const answersElement = document.getElementById("answers")
@@ -156,8 +113,15 @@
                 renderQuestion(currentQuestionIndex);
             });
 
-            renderQuestion(currentQuestionIndex);
+            function loadAndInitQuestions() {
+                // Get JSON from Question directory.
 
+
+                renderQuestion(currentQuestionIndex);
+            }
+
+
+            loadAndInitQuestions();
             /*
             let index = 0
             let locked = false

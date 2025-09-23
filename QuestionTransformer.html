@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>YAML → JSON Merger</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            :root { color-scheme: dark; }
+            body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:#0b1220; color:#e6f0ff }
+            .wrap { max-width: 900px; margin: 40px auto; padding: 24px }
+            .card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 20px; backdrop-filter: blur(8px) }
+            .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap }
+            .btn { padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2); background: #134383; color: #fff; cursor: pointer }
+            .btn:disabled { opacity: .5; cursor: not-allowed }
+            .accent { background: #009faf; border-color: #009faf }
+            pre { white-space: pre-wrap; word-break: break-word; background: #0d1629; border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 16px; max-height: 50vh; overflow: auto }
+            .badge { padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15) }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="card">
+                <div class="row" style="justify-content: space-between; margin-bottom: 12px">
+                    <h1 style="margin:0">Merge and Transform .YBKI files</h1>
+                    <span id="count" class="badge">0 files</span>
+                </div>
+                <div class="row" style="margin-bottom: 12px">
+                    <input id="files" type="file" multiple accept=".ybki,text" />
+                    <button id="merge" class="btn accent" disabled>Parse & Merge</button>
+                    <button id="download" class="btn" disabled>Download JSON</button>
+                </div>
+                <pre id="out">Select .ybki files and click "Parse & Merge".</pre>
+            </div>
+        </div>
+
+        <script>
+            const fileUpload = document.getElementById("files");
+            const mergeButton = document.getElementById("merge");
+            const downloadButton = document.getElementById("download");
+            const out = document.getElementById("out");
+            const count = document.getElementById("count");
+
+            const mergedData = [];
+
+            fileUpload.addEventListener("change", (e) => {
+                const files = e.target.files;
+                count.textContent = `${files.length} file${files.length !== 1 ? "s" : ""}`;
+                mergeButton.disabled = files.length === 0;
+                downloadButton.disabled = true;
+                out.textContent = `Selected ${files.length} file${files.length !== 1 ? "s" : ""}. Click "Parse & Merge".`;
+            });
+
+            mergeButton.addEventListener("click", async () => {
+                const files = fileUpload.files
+
+                const sortedFiles = Array.from(files).sort((a, b) => a.name.localeCompare(b.name));
+
+                if (files.length === 0) return;
+
+                out.textContent = "Parsing and merging files...";
+
+                for (const file of files) {
+                    try {
+                        const text = await file.text();
+                        const cleanedText = text.split("\n").filter(line => line.trim() && !line.trim().startsWith("#")).join("\n");
+                        const parts = cleanedText.split(/^---$/m).map(part => part.trim());
+                        for (const part of parts) {
+                            mergedData.push(questionParser(part));
+                        }
+                    } catch (err) {
+                    }
+                }
+                downloadButton.disabled = false;
+            });
+
+            downloadButton.addEventListener("click", () => {
+                const blob = new Blob([JSON.stringify(mergedData, null, 4)], { type: "application/json" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "Questions.json";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+
+            function questionParser(question) {
+                questionObject = {};
+                for (const line of question.split("\n")) {
+                    if (line.startsWith("Question:")) {
+                        questionObject.question = line.replace("Question:", "").trim();
+                    } else if (line.startsWith("Explanation:")) {
+                        questionObject.explanation = line.replace("Explanation:", "").trim();
+                    } else if (line.startsWith("Answer:")) {
+                        questionObject.answers ??= [];
+                        questionObject.answers.push(line.replace("Answer:", "").trim());
+                    } else if (line.startsWith("Media:")) {
+                        quetsionObject.media ??= [];
+                        questionObject.media.push(line.replace("Media:", "").trim());
+                    }
+                }
+                //TODO Add Validation
+                return questionObject;
+            }
+        </script>
+    </body>
+</html>
+
