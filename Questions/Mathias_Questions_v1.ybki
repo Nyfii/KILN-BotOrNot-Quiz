@@ -5,7 +5,7 @@ Answer: Marvin Minsky
 Answer: Geoffrey Hinton
 Explanation: John McCarthy prägte 1956 den Begriff „Artificial Intelligence“ und gilt daher als Vater der KI.
 
-⸻
+---
 
 Question: Welcher Teilbereich gehört NICHT zur KI?
 Answer: Thermodynamik
@@ -14,7 +14,7 @@ Answer: Computer Vision
 Answer: Natural Language Processing
 Explanation: Thermodynamik ist eine physikalische Disziplin, keine Teildisziplin der KI.
 
-⸻
+---
 
 Question: Welche Methode bildet die Grundlage von Deep Learning?
 Answer: Künstliche neuronale Netze
@@ -23,7 +23,7 @@ Answer: Lineare Regression
 Answer: Genetische Algorithmen
 Explanation: Deep Learning basiert auf tiefen künstlichen neuronalen Netzen mit vielen Schichten.
 
-⸻
+---
 
 Question: Was versteht man unter „Supervised Learning“?
 Answer: Lernen anhand von gelabelten Daten
@@ -32,7 +32,7 @@ Answer: Lernen durch Ausprobieren ohne Feedback
 Answer: Lernen durch evolutionäre Prozesse
 Explanation: Beim überwachten Lernen (Supervised Learning) trainiert man ein Modell mit Eingaben und den dazugehörigen richtigen Ausgaben.
 
-⸻
+---
 
 Question: Was ist ein bekanntes Beispiel für Reinforcement Learning?
 Answer: AlphaGo von DeepMind
@@ -41,7 +41,7 @@ Answer: Siri Sprachassistent
 Answer: Google Translate
 Explanation: AlphaGo nutzte Reinforcement Learning, um den weltbesten Go-Spieler zu besiegen.
 
-⸻
+---
 
 Question: Welche Herausforderung bezeichnet man als „Bias“ in KI-Systemen?
 Answer: Verzerrungen durch fehlerhafte oder unausgewogene Trainingsdaten
@@ -50,7 +50,7 @@ Answer: Geringere Genauigkeit bei großen Datensätzen
 Answer: Automatische Anpassung der Parameter
 Explanation: Bias entsteht, wenn Daten oder Algorithmen systematisch verzerrte Ergebnisse liefern.
 
-⸻
+---
 
 Question: Was beschreibt der Begriff „Turing-Test“?
 Answer: Einen Test, ob eine Maschine menschenähnliche Intelligenz vortäuschen kann
@@ -59,7 +59,7 @@ Answer: Einen Test zur Genauigkeit von KI-Bilderkennung
 Answer: Einen Test zur Sicherheit von Netzwerken
 Explanation: Der Turing-Test prüft, ob ein Mensch in einer Kommunikation nicht unterscheiden kann, ob er mit einer KI oder einer Person spricht.
 
-⸻
+---
 
 Question: Welcher dieser Bereiche ist ein ethisches Problem bei KI?
 Answer: Diskriminierung durch Algorithmen
@@ -68,7 +68,7 @@ Answer: Bessere Bilderkennung
 Answer: Schnellere Suchmaschinen
 Explanation: Diskriminierung durch KI-Systeme ist ein zentrales ethisches Problem, das stark diskutiert wird.
 
-⸻
+---
 
 Question: Welche bekannte KI kann menschenähnliche Texte verfassen?
 Answer: ChatGPT
@@ -77,7 +77,7 @@ Answer: Photoshop
 Answer: Linux
 Explanation: ChatGPT ist ein KI-Modell für natürliche Sprache und kann menschenähnliche Texte schreiben.
 
-⸻
+---
 
 Question: Was versteht man unter „Explainable AI“ (XAI)?
 Answer: KI-Systeme, deren Entscheidungen für Menschen nachvollziehbar erklärt werden können
@@ -87,3 +87,64 @@ Answer: KI, die nur in einfacher Sprache kommuniziert
 Explanation: Explainable AI beschäftigt sich mit der Transparenz und Nachvollziehbarkeit von KI-Entscheidungen.
 
 ---
+
+Question: Welches Risiko besteht bei der Nutzung von Gesichtserkennungssystemen?
+Answer: Verletzung der Privatsphäre und Massenüberwachung
+Answer: Höhere Bildqualität bei Kameras
+Answer: Schnellere Ladezeiten von Webseiten
+Answer: Genauere Wettervorhersagen
+Explanation: Gesichtserkennung kann zu Überwachung, Missbrauch und Verlust von Privatsphäre führen.
+
+---
+
+Question: Was bezeichnet man als „Algorithmic Bias“?
+Answer: Diskriminierende Ergebnisse aufgrund von verzerrten Daten oder Algorithmen
+Answer: Eine Methode, um Algorithmen schneller zu machen
+Answer: Den Ausfall eines Systems durch Überlastung
+Answer: Ein neutraler Zufallsfehler im Programmcode
+Explanation: Algorithmic Bias beschreibt, dass KI diskriminierende oder verzerrte Ergebnisse liefert, weil die Trainingsdaten Vorurteile enthalten.
+
+---
+
+Question: Warum sind Deepfakes ein ethisches Problem?
+Answer: Sie können Menschen täuschend echt Dinge sagen oder tun lassen, die sie nie gemacht haben
+Answer: Sie erhöhen die Qualität von Filmen
+Answer: Sie verbessern medizinische Bilddiagnostik
+Answer: Sie helfen bei der Kompression von Daten
+Explanation: Deepfakes können zur Manipulation, Verleumdung oder gezielten Desinformation genutzt werden.
+
+---
+
+Question: Welche Gefahr besteht, wenn KI im Arbeitsmarkt eingesetzt wird?
+Answer: Automatisierung kann Arbeitsplätze ersetzen und Ungleichheiten verstärken
+Answer: KI verbessert nur die Ergonomie am Arbeitsplatz
+Answer: KI reduziert den Stromverbrauch von Computern
+Answer: KI steigert ausschließlich die Produktivität ohne Risiken
+Explanation: KI kann ganze Berufsfelder automatisieren und soziale sowie ökonomische Ungleichheiten verschärfen.
+
+---
+
+Question: Warum ist Transparenz in KI-Systemen wichtig?
+Answer: Damit Entscheidungen nachvollziehbar und überprüfbar sind
+Answer: Damit Algorithmen schneller laufen
+Answer: Damit weniger Speicherplatz benötigt wird
+Answer: Damit KI-Systeme günstiger werden
+Explanation: Transparenz ermöglicht es, Bias, Diskriminierung und Fehlentscheidungen aufzudecken.
+
+---
+
+Question: Welches ethische Problem entsteht bei autonomen Waffensystemen?
+Answer: Entscheidungen über Leben und Tod werden von Maschinen getroffen
+Answer: Sie verbrauchen mehr Strom als herkömmliche Waffen
+Answer: Sie können keine Ziele mehr erkennen
+Answer: Sie funktionieren nur bei Sonnenschein
+Explanation: Autonome Waffensysteme werfen fundamentale Fragen nach menschlicher Verantwortung und ethischer Vertretbarkeit auf.
+
+---
+
+Question: Warum ist Datensammlung durch KI ein ethisches Problem?
+Answer: Sie kann zu Überwachung und Missbrauch persönlicher Informationen führen
+Answer: Sie beschleunigt Internetverbindungen
+Answer: Sie verbessert die Akkulaufzeit von Smartphones
+Answer: Sie reduziert die Serverkosten
+Explanation: KI-Systeme, die große Mengen an persönlichen Daten sammeln, bergen Risiken für Datenschutz und individuelle Freiheit.
