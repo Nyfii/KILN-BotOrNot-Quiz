@@ -49,3 +49,31 @@ Answer: 1936
 Answer: 1972
 Answer: 1995
 Explanation: ...
+
+---
+
+Question: Welcher dieser Texte ist eine Originalzitat von Göthe?
+Answer: A: "Zwei Seelen wohnen, ach! In meiner Brust. Die eine will sich von der andern trennen!"
+Answer: B: "In meiner Brust erheben sich zwei Stimmen, die eine drängt ins Licht, die andre will ins Schweigen sinken."
+Explanation: ...
+
+---
+
+Question: Welcher dieser Texte ist ein Originalzitat von Rilke?
+Answer: A: "Herr: es ist Zeit. Der Sommer war sehr groß. Leg deinen Schatten auf die Sonnenuhren, und auf den Fluren laß die Winde los."
+Answer: B: "Der Sommer sinkt, als hätte er geschlaffen, der Herbst erwacht und füllt die stillen Räume mit Schatten, die sich über Felder legen"
+Explanation: ...
+
+---
+
+Question: Wenn eine KI im medizinschen Bereich eine falsche Diagnose stellt - wär trägt die Verantwortung?
+Answer: Der Arzt oder Hersteller
+Answer: Die KI selbst
+Explanation: Die Verantwortung liegt bei menschlichen Akteuren wie Ärzten oder Herstellern. Nicht bei der KI selbst.
+
+---
+
+Question: Würdest du einer KI vertrauen, die über ein Gerichtsverfahren entscheidet?
+Answer: Nein, Entscheidungen im Rechtssystem sollte von Menschen getroffen werden
+Answer: Ja, KI ist neutral und immer fair
+Explanation: Rechtlichte Entscheidungen erfordern menschliches Urteilsvermögen, Ethik und Kontextbewusstsein - Eigenschaften, die KI nicht besitzt.
