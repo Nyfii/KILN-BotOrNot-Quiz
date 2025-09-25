@@ -1,0 +1,89 @@
+Question: Wer gilt als „Vater der Künstlichen Intelligenz“?
+Answer: John McCarthy
+Answer: Alan Turing
+Answer: Marvin Minsky
+Answer: Geoffrey Hinton
+Explanation: John McCarthy prägte 1956 den Begriff „Artificial Intelligence“ und gilt daher als Vater der KI.
+
+⸻
+
+Question: Welcher Teilbereich gehört NICHT zur KI?
+Answer: Thermodynamik
+Answer: Maschinelles Lernen
+Answer: Computer Vision
+Answer: Natural Language Processing
+Explanation: Thermodynamik ist eine physikalische Disziplin, keine Teildisziplin der KI.
+
+⸻
+
+Question: Welche Methode bildet die Grundlage von Deep Learning?
+Answer: Künstliche neuronale Netze
+Answer: Entscheidungsbäume
+Answer: Lineare Regression
+Answer: Genetische Algorithmen
+Explanation: Deep Learning basiert auf tiefen künstlichen neuronalen Netzen mit vielen Schichten.
+
+⸻
+
+Question: Was versteht man unter „Supervised Learning“?
+Answer: Lernen anhand von gelabelten Daten
+Answer: Lernen ohne jegliche Daten
+Answer: Lernen durch Ausprobieren ohne Feedback
+Answer: Lernen durch evolutionäre Prozesse
+Explanation: Beim überwachten Lernen (Supervised Learning) trainiert man ein Modell mit Eingaben und den dazugehörigen richtigen Ausgaben.
+
+⸻
+
+Question: Was ist ein bekanntes Beispiel für Reinforcement Learning?
+Answer: AlphaGo von DeepMind
+Answer: Excel Tabellenkalkulation
+Answer: Siri Sprachassistent
+Answer: Google Translate
+Explanation: AlphaGo nutzte Reinforcement Learning, um den weltbesten Go-Spieler zu besiegen.
+
+⸻
+
+Question: Welche Herausforderung bezeichnet man als „Bias“ in KI-Systemen?
+Answer: Verzerrungen durch fehlerhafte oder unausgewogene Trainingsdaten
+Answer: Höhere Rechenleistung durch GPUs
+Answer: Geringere Genauigkeit bei großen Datensätzen
+Answer: Automatische Anpassung der Parameter
+Explanation: Bias entsteht, wenn Daten oder Algorithmen systematisch verzerrte Ergebnisse liefern.
+
+⸻
+
+Question: Was beschreibt der Begriff „Turing-Test“?
+Answer: Einen Test, ob eine Maschine menschenähnliche Intelligenz vortäuschen kann
+Answer: Einen Test zur Rechenleistung von Computern
+Answer: Einen Test zur Genauigkeit von KI-Bilderkennung
+Answer: Einen Test zur Sicherheit von Netzwerken
+Explanation: Der Turing-Test prüft, ob ein Mensch in einer Kommunikation nicht unterscheiden kann, ob er mit einer KI oder einer Person spricht.
+
+⸻
+
+Question: Welcher dieser Bereiche ist ein ethisches Problem bei KI?
+Answer: Diskriminierung durch Algorithmen
+Answer: Geringere Stromkosten
+Answer: Bessere Bilderkennung
+Answer: Schnellere Suchmaschinen
+Explanation: Diskriminierung durch KI-Systeme ist ein zentrales ethisches Problem, das stark diskutiert wird.
+
+⸻
+
+Question: Welche bekannte KI kann menschenähnliche Texte verfassen?
+Answer: ChatGPT
+Answer: Excel
+Answer: Photoshop
+Answer: Linux
+Explanation: ChatGPT ist ein KI-Modell für natürliche Sprache und kann menschenähnliche Texte schreiben.
+
+⸻
+
+Question: Was versteht man unter „Explainable AI“ (XAI)?
+Answer: KI-Systeme, deren Entscheidungen für Menschen nachvollziehbar erklärt werden können
+Answer: KI, die besonders schnell trainiert werden kann
+Answer: KI, die automatisch neue Algorithmen generiert
+Answer: KI, die nur in einfacher Sprache kommuniziert
+Explanation: Explainable AI beschäftigt sich mit der Transparenz und Nachvollziehbarkeit von KI-Entscheidungen.
+
+---
