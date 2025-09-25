@@ -24,7 +24,8 @@ All the questions should go in the Questions folder, while MediaFiles like image
 ### Adding new Questions file
 
 ```YAML
-# For Media write the FileName. The File needs to be in the correct location. Following Formats are supported:
+# For Media write the FileName. The File needs to be in the correct location. 
+# The following Formats are supported:
 # Image: .png, .jpg, .webp
 # Video: .mp4
 # Audio: .mp3, .wav
