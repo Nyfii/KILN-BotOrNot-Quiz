@@ -14,9 +14,10 @@ BotOrNot/
 		- QuestionFile1.ybki
 		- QuestionFile2.ybki
 		...
-	Resources
+	Resources/
 		- MediaFile1.*
 		- MediaFile2.*
+		...
 ```
 
 All the questions should go in the Questions folder, while MediaFiles like images, videos, audios go in the Resources Folder.
