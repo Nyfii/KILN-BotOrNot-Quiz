@@ -6,16 +6,23 @@
         <title>Bot or Not — Quick Quiz</title>
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
+    <style>
+        * {
+          user-select: none; /* Standard */
+          -webkit-user-select: none; /* Chrome, Safari */
+          -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+      }
+    </style>
     <body class="min-h-screen flex flex-col bg-gradient-to-br from-[#134383] to-[#009faf] text-slate-100 antialiased relative overflow-hidden">
         <div class="absolute top-20 left-0 w-72 h-72 bg-[#009faf]/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-40 right-0 w-80 h-80 bg-[#134383]/30 rounded-full blur-3xl"></div>
 
         <header class="w-full max-w-5xl mx-auto mt-6 mb-6 px-4 relative z-10">
             <div class="flex items-center gap-3">
-                <div class="h-10 w-10 rounded-2xl bg-gradient-to-tr from-[#134383] to-[#009faf] flex items-center justify-center text-white font-semibold">Q</div>
+                <div class="h-10 w-10 rounded-2xl bg-gradient-to-tr from-[#134383] to-[#009faf] flex items-center justify-center text-white font-semibold">Y</div>
                 <div>
-                    <h1 class="text-2xl sm:text-3xl font-bold">Bot or Not - Quick Quiz</h1>
-                    <p class="text-xs text-white/70">Bot or Not</p>
+                    <h1 class="text-2xl sm:text-3xl font-bold">Bot or Not - The one and only Quiz!!!!</h1>
                 </div>
             </div>
         </header>
@@ -46,7 +53,7 @@
         </main>
 
         <footer class="w-full bg-white text-gray-800 text-center py-6 mt-8 relative z-10">
-            Footer space (customize me later)
+            Footer space (Customize Me!!!!! I want to look AWESOME!!)
         </footer>
     
         <script src="Questions/Questions.js"></script>
@@ -58,7 +65,7 @@
             const feedbackElement = document.getElementById("feedback")
             const nextButton = document.getElementById("nextBtn")
  
-            let doQuestionsInOrder = false;
+            let doQuestionsInOrder = true;
             let currentQuestionIndex = 0;
             const minIntervalBetweenQuestions = 5;
             const lastQuestions = [0];
