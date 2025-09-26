@@ -1,196 +1,172 @@
 window.BOT_OR_NOT_DATA = [
     {
-        "question": "Welche Programmiersprache wird besonders häufig für KI-Entwicklung genutzt?",
+        "question": "Wer gilt als „Vater der Künstlichen Intelligenz“?",
         "answers": [
-            "Python",
-            "Java",
-            "C++",
-            "PHP"
+            "John McCarthy",
+            "Alan Turing",
+            "Marvin Minsky",
+            "Geoffrey Hinton"
         ],
-        "explanation": "Python ist eine sehr einfach zu verwendene Sprache, in der es viele Bibliotheken und Frameworks gibt. Performancekritische Komponenten sind meist in C++ geschrieben."
+        "explanation": "John McCarthy prägte 1956 den Begriff „Artificial Intelligence“ und gilt daher als Vater der KI."
     },
     {
-        "question": "Welche KI-Anwendung hat das Potential, demokratische Wahlen zu beeinflussen?",
+        "question": "Welcher Teilbereich gehört NICHT zur KI?",
         "answers": [
-            "Alle Antworten sind richtig",
-            "Deepfake-Videos",
-            "Empfehlungssysteme in sozialen Medien",
-            "Automatische Nachrichten-Generierung"
+            "Thermodynamik",
+            "Maschinelles Lernen",
+            "Computer Vision",
+            "Natural Language Processing"
         ],
-        "explanation": "Deepfakes, Empfehlungssysteme und automatische Nachrichten können jeweils das Wahlverhalten manipuliern."
+        "explanation": "Thermodynamik ist eine physikalische Disziplin, keine Teildisziplin der KI."
     },
     {
-        "question": "Welches Land hat 2024 das weltweit erste umfassende KI-Gesetz (\"AI-Act\") verabschiedet?",
+        "question": "Welche Methode bildet die Grundlage von Deep Learning?",
         "answers": [
-            "Europäische Union",
-            "USA",
-            "China",
-            "Japan"
+            "Künstliche neuronale Netze",
+            "Entscheidungsbäume",
+            "Lineare Regression",
+            "Genetische Algorithmen"
         ],
-        "explanation": "Sie hat klare Regeln zur Sicherheit, Transparenz und Risikoeinstufung von KI-Systemen eingeführt."
+        "explanation": "Deep Learning basiert auf tiefen künstlichen neuronalen Netzen mit vielen Schichten."
     },
     {
-        "question": "Welches dieser Beispiele ist ein Deepfake?",
+        "question": "Was versteht man unter „Supervised Learning“?",
         "answers": [
-            "Ein manipuliertes Video, in dem eine Person Worte sagt, die sie nie gesagt hat",
-            "Ein Roboter, der Auto fährt",
-            "Ein Computerspiel mit KI-Gegnern",
-            "Eine App, die deine Schritte zählt"
+            "Lernen anhand von gelabelten Daten",
+            "Lernen ohne jegliche Daten",
+            "Lernen durch Ausprobieren ohne Feedback",
+            "Lernen durch evolutionäre Prozesse"
         ],
-        "explanation": "..."
+        "explanation": "Beim überwachten Lernen (Supervised Learning) trainiert man ein Modell mit Eingaben und den dazugehörigen richtigen Ausgaben."
     },
     {
-        "question": "Wofür steht die Abkürzung \"AI\"?",
+        "question": "Was ist ein bekanntes Beispiel für Reinforcement Learning?",
         "answers": [
-            "Artificial Intelligence",
-            "Algorithmic Interface",
-            "Automatic Interaction",
-            "Advanced Innovation"
+            "AlphaGo von DeepMind",
+            "Excel Tabellenkalkulation",
+            "Siri Sprachassistent",
+            "Google Translate"
         ],
-        "explanation": "..."
+        "explanation": "AlphaGo nutzte Reinforcement Learning, um den weltbesten Go-Spieler zu besiegen."
     },
     {
-        "question": "Wann wurde der Begriff \"Künstliche Intelligenz\" offiziell eingeführt?",
+        "question": "Welche Herausforderung bezeichnet man als „Bias“ in KI-Systemen?",
         "answers": [
-            "1956",
-            "1936",
-            "1972",
-            "1995"
+            "Verzerrungen durch fehlerhafte oder unausgewogene Trainingsdaten",
+            "Höhere Rechenleistung durch GPUs",
+            "Geringere Genauigkeit bei großen Datensätzen",
+            "Automatische Anpassung der Parameter"
         ],
-        "explanation": "..."
+        "explanation": "Bias entsteht, wenn Daten oder Algorithmen systematisch verzerrte Ergebnisse liefern."
     },
     {
-        "question": "Welcher dieser Texte ist eine Originalzitat von Göthe?",
+        "question": "Was beschreibt der Begriff „Turing-Test“?",
         "answers": [
-            "A: \"Zwei Seelen wohnen, ach! In meiner Brust. Die eine will sich von der andern trennen!\"",
-            "B: \"In meiner Brust erheben sich zwei Stimmen, die eine drängt ins Licht, die andre will ins Schweigen sinken.\""
+            "Einen Test, ob eine Maschine menschenähnliche Intelligenz vortäuschen kann",
+            "Einen Test zur Rechenleistung von Computern",
+            "Einen Test zur Genauigkeit von KI-Bilderkennung",
+            "Einen Test zur Sicherheit von Netzwerken"
         ],
-        "explanation": "..."
+        "explanation": "Der Turing-Test prüft, ob ein Mensch in einer Kommunikation nicht unterscheiden kann, ob er mit einer KI oder einer Person spricht."
     },
     {
-        "question": "Welcher dieser Texte ist ein Originalzitat von Rilke?",
+        "question": "Welcher dieser Bereiche ist ein ethisches Problem bei KI?",
         "answers": [
-            "A: \"Herr: es ist Zeit. Der Sommer war sehr groß. Leg deinen Schatten auf die Sonnenuhren, und auf den Fluren laß die Winde los.\"",
-            "B: \"Der Sommer sinkt, als hätte er geschlaffen, der Herbst erwacht und füllt die stillen Räume mit Schatten, die sich über Felder legen\""
+            "Diskriminierung durch Algorithmen",
+            "Geringere Stromkosten",
+            "Bessere Bilderkennung",
+            "Schnellere Suchmaschinen"
         ],
-        "explanation": "..."
+        "explanation": "Diskriminierung durch KI-Systeme ist ein zentrales ethisches Problem, das stark diskutiert wird."
     },
     {
-        "question": "Wenn eine KI im medizinschen Bereich eine falsche Diagnose stellt - wär trägt die Verantwortung?",
+        "question": "Welche bekannte KI kann menschenähnliche Texte verfassen?",
         "answers": [
-            "Der Arzt oder Hersteller",
-            "Die KI selbst"
+            "ChatGPT",
+            "Excel",
+            "Photoshop",
+            "Linux"
         ],
-        "explanation": "Die Verantwortung liegt bei menschlichen Akteuren wie Ärzten oder Herstellern. Nicht bei der KI selbst."
+        "explanation": "ChatGPT ist ein KI-Modell für natürliche Sprache und kann menschenähnliche Texte schreiben."
     },
     {
-        "question": "Würdest du einer KI vertrauen, die über ein Gerichtsverfahren entscheidet?",
+        "question": "Was versteht man unter „Explainable AI“ (XAI)?",
         "answers": [
-            "Nein, Entscheidungen im Rechtssystem sollte von Menschen getroffen werden",
-            "Ja, KI ist neutral und immer fair"
+            "KI-Systeme, deren Entscheidungen für Menschen nachvollziehbar erklärt werden können",
+            "KI, die besonders schnell trainiert werden kann",
+            "KI, die automatisch neue Algorithmen generiert",
+            "KI, die nur in einfacher Sprache kommuniziert"
         ],
-        "explanation": "Rechtlichte Entscheidungen erfordern menschliches Urteilsvermögen, Ethik und Kontextbewusstsein - Eigenschaften, die KI nicht besitzt."
+        "explanation": "Explainable AI beschäftigt sich mit der Transparenz und Nachvollziehbarkeit von KI-Entscheidungen."
     },
     {
-        "question": "Welche Programmiersprache wird besonders häufig für KI-Entwicklung genutzt?",
+        "question": "Welches Risiko besteht bei der Nutzung von Gesichtserkennungssystemen?",
         "answers": [
-            "Python",
-            "Java",
-            "C++",
-            "PHP"
+            "Verletzung der Privatsphäre und Massenüberwachung",
+            "Höhere Bildqualität bei Kameras",
+            "Schnellere Ladezeiten von Webseiten",
+            "Genauere Wettervorhersagen"
         ],
-        "explanation": "Python ist eine sehr einfach zu verwendene Sprache, in der es viele Bibliotheken und Frameworks gibt. Performancekritische Komponenten sind meist in C++ geschrieben."
+        "explanation": "Gesichtserkennung kann zu Überwachung, Missbrauch und Verlust von Privatsphäre führen."
     },
     {
-        "question": "Welche KI-Anwendung hat das Potential, demokratische Wahlen zu beeinflussen?",
+        "question": "Was bezeichnet man als „Algorithmic Bias“?",
         "answers": [
-            "Alle Antworten sind richtig",
-            "Deepfake-Videos",
-            "Empfehlungssysteme in sozialen Medien",
-            "Automatische Nachrichten-Generierung"
+            "Diskriminierende Ergebnisse aufgrund von verzerrten Daten oder Algorithmen",
+            "Eine Methode, um Algorithmen schneller zu machen",
+            "Den Ausfall eines Systems durch Überlastung",
+            "Ein neutraler Zufallsfehler im Programmcode"
         ],
-        "explanation": "Deepfakes, Empfehlungssysteme und automatische Nachrichten können jeweils das Wahlverhalten manipuliern."
+        "explanation": "Algorithmic Bias beschreibt, dass KI diskriminierende oder verzerrte Ergebnisse liefert, weil die Trainingsdaten Vorurteile enthalten."
     },
     {
-        "question": "Welches Land hat 2024 das weltweit erste umfassende KI-Gesetz (\"AI-Act\") verabschiedet?",
+        "question": "Warum sind Deepfakes ein ethisches Problem?",
         "answers": [
-            "Europäische Union",
-            "USA",
-            "China",
-            "Japan"
+            "Sie können Menschen täuschend echt Dinge sagen oder tun lassen, die sie nie gemacht haben",
+            "Sie erhöhen die Qualität von Filmen",
+            "Sie verbessern medizinische Bilddiagnostik",
+            "Sie helfen bei der Kompression von Daten"
         ],
-        "explanation": "Sie hat klare Regeln zur Sicherheit, Transparenz und Risikoeinstufung von KI-Systemen eingeführt."
+        "explanation": "Deepfakes können zur Manipulation, Verleumdung oder gezielten Desinformation genutzt werden."
     },
     {
-        "question": "Welches dieser Beispiele ist ein Deepfake?",
+        "question": "Welche Gefahr besteht, wenn KI im Arbeitsmarkt eingesetzt wird?",
         "answers": [
-            "Ein manipuliertes Video, in dem eine Person Worte sagt, die sie nie gesagt hat",
-            "Ein Roboter, der Auto fährt",
-            "Ein Computerspiel mit KI-Gegnern",
-            "Eine App, die deine Schritte zählt"
+            "Automatisierung kann Arbeitsplätze ersetzen und Ungleichheiten verstärken",
+            "KI verbessert nur die Ergonomie am Arbeitsplatz",
+            "KI reduziert den Stromverbrauch von Computern",
+            "KI steigert ausschließlich die Produktivität ohne Risiken"
         ],
-        "explanation": "..."
+        "explanation": "KI kann ganze Berufsfelder automatisieren und soziale sowie ökonomische Ungleichheiten verschärfen."
     },
     {
-        "question": "Wofür steht die Abkürzung \"AI\"?",
+        "question": "Warum ist Transparenz in KI-Systemen wichtig?",
         "answers": [
-            "Artificial Intelligence",
-            "Algorithmic Interface",
-            "Automatic Interaction",
-            "Advanced Innovation"
+            "Damit Entscheidungen nachvollziehbar und überprüfbar sind",
+            "Damit Algorithmen schneller laufen",
+            "Damit weniger Speicherplatz benötigt wird",
+            "Damit KI-Systeme günstiger werden"
         ],
-        "explanation": "..."
+        "explanation": "Transparenz ermöglicht es, Bias, Diskriminierung und Fehlentscheidungen aufzudecken."
     },
     {
-        "question": "Wann wurde der Begriff \"Künstliche Intelligenz\" offiziell eingeführt?",
+        "question": "Welches ethische Problem entsteht bei autonomen Waffensystemen?",
         "answers": [
-            "1956",
-            "1936",
-            "1972",
-            "1995"
+            "Entscheidungen über Leben und Tod werden von Maschinen getroffen",
+            "Sie verbrauchen mehr Strom als herkömmliche Waffen",
+            "Sie können keine Ziele mehr erkennen",
+            "Sie funktionieren nur bei Sonnenschein"
         ],
-        "explanation": "..."
+        "explanation": "Autonome Waffensysteme werfen fundamentale Fragen nach menschlicher Verantwortung und ethischer Vertretbarkeit auf."
     },
     {
-        "question": "Welcher dieser Texte ist eine Originalzitat von Göthe?",
+        "question": "Warum ist Datensammlung durch KI ein ethisches Problem?",
         "answers": [
-            "A: \"Zwei Seelen wohnen, ach! In meiner Brust. Die eine will sich von der andern trennen!\"",
-            "B: \"In meiner Brust erheben sich zwei Stimmen, die eine drängt ins Licht, die andre will ins Schweigen sinken.\""
+            "Sie kann zu Überwachung und Missbrauch persönlicher Informationen führen",
+            "Sie beschleunigt Internetverbindungen",
+            "Sie verbessert die Akkulaufzeit von Smartphones",
+            "Sie reduziert die Serverkosten"
         ],
-        "explanation": "..."
-    },
-    {
-        "question": "Welcher dieser Texte ist ein Originalzitat von Rilke?",
-        "answers": [
-            "A: \"Herr: es ist Zeit. Der Sommer war sehr groß. Leg deinen Schatten auf die Sonnenuhren, und auf den Fluren laß die Winde los.\"",
-            "B: \"Der Sommer sinkt, als hätte er geschlaffen, der Herbst erwacht und füllt die stillen Räume mit Schatten, die sich über Felder legen\""
-        ],
-        "explanation": "..."
-    },
-    {
-        "question": "Wenn eine KI im medizinschen Bereich eine falsche Diagnose stellt - wär trägt die Verantwortung?",
-        "answers": [
-            "Der Arzt oder Hersteller",
-            "Die KI selbst"
-        ],
-        "explanation": "Die Verantwortung liegt bei menschlichen Akteuren wie Ärzten oder Herstellern. Nicht bei der KI selbst."
-    },
-    {
-        "question": "Würdest du einer KI vertrauen, die über ein Gerichtsverfahren entscheidet?",
-        "answers": [
-            "Nein, Entscheidungen im Rechtssystem sollte von Menschen getroffen werden",
-            "Ja, KI ist neutral und immer fair"
-        ],
-        "explanation": "Rechtlichte Entscheidungen erfordern menschliches Urteilsvermögen, Ethik und Kontextbewusstsein - Eigenschaften, die KI nicht besitzt."
-    },
-    {
-        "question": "What is A Dog?",
-        "answers": [
-            "1",
-            "2",
-            "3",
-            "4"
-        ],
-        "explanation": "Very cute :)"
+        "explanation": "KI-Systeme, die große Mengen an persönlichen Daten sammeln, bergen Risiken für Datenschutz und individuelle Freiheit."
     }
 ]

@@ -60,10 +60,11 @@
         <script>
             const questions = window.BOT_OR_NOT_DATA;
 
-            const questionElement = document.getElementById("question")
-            const answersElement = document.getElementById("answers")
-            const feedbackElement = document.getElementById("feedback")
-            const nextButton = document.getElementById("nextBtn")
+            const questionElement = document.getElementById("question");
+            const answersElement = document.getElementById("answers");
+            const feedbackElement = document.getElementById("feedback");
+            const nextButton = document.getElementById("nextBtn");
+            const questionIndexElement = document.getElementById("questionIndex");
  
             let doQuestionsInOrder = true;
             let currentQuestionIndex = 0;
@@ -77,6 +78,7 @@
                 nextButton.disabled = true;
                 answersElement.innerHTML = "";
                 feedbackElement.classList.add("hidden");
+                questionIndexElement.textContent = index + 1;
 
                 questionElement.textContent = questions[index].question;
                 randomOffset = Math.floor(Math.random() * (questions[index].answers.length));
