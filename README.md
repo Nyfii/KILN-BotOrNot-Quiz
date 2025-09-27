@@ -1,4 +1,4 @@
-**Bot or Not** Quiz App is a fullscreen quit app used in workshops. It shows questions (text, images, audio and videos) and gives instant feedback to the responses. It doesn't track score and runs directly in your browser.
+**Bot or Not** Quiz App is a fullscreen quiz app used in workshops. It shows questions (text, images, audio and videos) and gives instant feedback to the responses. It doesn't track score and runs directly in your browser.
 
 ## Adding Questions
 
