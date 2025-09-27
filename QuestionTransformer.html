@@ -99,7 +99,10 @@
                     } else if (line.startsWith("Media:")) {
                         quetsionObject.media ??= [];
                         questionObject.media.push(line.replace("Media:", "").trim());
+                    } else if (line.startsWith("Label:")) {
+                        questionObject.label = line.replace("Label:", "").trim();
                     }
+                    console.log(questionObject);
                 }
                 //TODO Add Validation
                 return questionObject;
