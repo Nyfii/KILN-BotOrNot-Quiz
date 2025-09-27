@@ -7,7 +7,8 @@ window.BOT_OR_NOT_DATA = [
             "Marvin Minsky",
             "Geoffrey Hinton"
         ],
-        "explanation": "John McCarthy prägte 1956 den Begriff „Artificial Intelligence“ und gilt daher als Vater der KI."
+        "explanation": "John McCarthy prägte 1956 den Begriff „Artificial Intelligence“ und gilt daher als Vater der KI.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Welcher Teilbereich gehört NICHT zur KI?",
@@ -17,7 +18,8 @@ window.BOT_OR_NOT_DATA = [
             "Computer Vision",
             "Natural Language Processing"
         ],
-        "explanation": "Thermodynamik ist eine physikalische Disziplin, keine Teildisziplin der KI."
+        "explanation": "Thermodynamik ist eine physikalische Disziplin, keine Teildisziplin der KI.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Welche Methode bildet die Grundlage von Deep Learning?",
@@ -27,7 +29,8 @@ window.BOT_OR_NOT_DATA = [
             "Lineare Regression",
             "Genetische Algorithmen"
         ],
-        "explanation": "Deep Learning basiert auf tiefen künstlichen neuronalen Netzen mit vielen Schichten."
+        "explanation": "Deep Learning basiert auf tiefen künstlichen neuronalen Netzen mit vielen Schichten.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Was versteht man unter „Supervised Learning“?",
@@ -37,7 +40,8 @@ window.BOT_OR_NOT_DATA = [
             "Lernen durch Ausprobieren ohne Feedback",
             "Lernen durch evolutionäre Prozesse"
         ],
-        "explanation": "Beim überwachten Lernen (Supervised Learning) trainiert man ein Modell mit Eingaben und den dazugehörigen richtigen Ausgaben."
+        "explanation": "Beim überwachten Lernen (Supervised Learning) trainiert man ein Modell mit Eingaben und den dazugehörigen richtigen Ausgaben.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Was ist ein bekanntes Beispiel für Reinforcement Learning?",
@@ -47,7 +51,8 @@ window.BOT_OR_NOT_DATA = [
             "Siri Sprachassistent",
             "Google Translate"
         ],
-        "explanation": "AlphaGo nutzte Reinforcement Learning, um den weltbesten Go-Spieler zu besiegen."
+        "explanation": "AlphaGo nutzte Reinforcement Learning, um den weltbesten Go-Spieler zu besiegen.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Welche Herausforderung bezeichnet man als „Bias“ in KI-Systemen?",
@@ -57,7 +62,8 @@ window.BOT_OR_NOT_DATA = [
             "Geringere Genauigkeit bei großen Datensätzen",
             "Automatische Anpassung der Parameter"
         ],
-        "explanation": "Bias entsteht, wenn Daten oder Algorithmen systematisch verzerrte Ergebnisse liefern."
+        "explanation": "Bias entsteht, wenn Daten oder Algorithmen systematisch verzerrte Ergebnisse liefern.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Was beschreibt der Begriff „Turing-Test“?",
@@ -67,7 +73,8 @@ window.BOT_OR_NOT_DATA = [
             "Einen Test zur Genauigkeit von KI-Bilderkennung",
             "Einen Test zur Sicherheit von Netzwerken"
         ],
-        "explanation": "Der Turing-Test prüft, ob ein Mensch in einer Kommunikation nicht unterscheiden kann, ob er mit einer KI oder einer Person spricht."
+        "explanation": "Der Turing-Test prüft, ob ein Mensch in einer Kommunikation nicht unterscheiden kann, ob er mit einer KI oder einer Person spricht.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Welcher dieser Bereiche ist ein ethisches Problem bei KI?",
@@ -77,7 +84,8 @@ window.BOT_OR_NOT_DATA = [
             "Bessere Bilderkennung",
             "Schnellere Suchmaschinen"
         ],
-        "explanation": "Diskriminierung durch KI-Systeme ist ein zentrales ethisches Problem, das stark diskutiert wird."
+        "explanation": "Diskriminierung durch KI-Systeme ist ein zentrales ethisches Problem, das stark diskutiert wird.",
+        "label": "Ethik"
     },
     {
         "question": "Welche bekannte KI kann menschenähnliche Texte verfassen?",
@@ -87,7 +95,8 @@ window.BOT_OR_NOT_DATA = [
             "Photoshop",
             "Linux"
         ],
-        "explanation": "ChatGPT ist ein KI-Modell für natürliche Sprache und kann menschenähnliche Texte schreiben."
+        "explanation": "ChatGPT ist ein KI-Modell für natürliche Sprache und kann menschenähnliche Texte schreiben.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Was versteht man unter „Explainable AI“ (XAI)?",
@@ -97,7 +106,8 @@ window.BOT_OR_NOT_DATA = [
             "KI, die automatisch neue Algorithmen generiert",
             "KI, die nur in einfacher Sprache kommuniziert"
         ],
-        "explanation": "Explainable AI beschäftigt sich mit der Transparenz und Nachvollziehbarkeit von KI-Entscheidungen."
+        "explanation": "Explainable AI beschäftigt sich mit der Transparenz und Nachvollziehbarkeit von KI-Entscheidungen.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Welches Risiko besteht bei der Nutzung von Gesichtserkennungssystemen?",
@@ -107,7 +117,8 @@ window.BOT_OR_NOT_DATA = [
             "Schnellere Ladezeiten von Webseiten",
             "Genauere Wettervorhersagen"
         ],
-        "explanation": "Gesichtserkennung kann zu Überwachung, Missbrauch und Verlust von Privatsphäre führen."
+        "explanation": "Gesichtserkennung kann zu Überwachung, Missbrauch und Verlust von Privatsphäre führen.",
+        "label": "Ethik"
     },
     {
         "question": "Was bezeichnet man als „Algorithmic Bias“?",
@@ -117,7 +128,8 @@ window.BOT_OR_NOT_DATA = [
             "Den Ausfall eines Systems durch Überlastung",
             "Ein neutraler Zufallsfehler im Programmcode"
         ],
-        "explanation": "Algorithmic Bias beschreibt, dass KI diskriminierende oder verzerrte Ergebnisse liefert, weil die Trainingsdaten Vorurteile enthalten."
+        "explanation": "Algorithmic Bias beschreibt, dass KI diskriminierende oder verzerrte Ergebnisse liefert, weil die Trainingsdaten Vorurteile enthalten.",
+        "label": "Grundwissen KI"
     },
     {
         "question": "Warum sind Deepfakes ein ethisches Problem?",
@@ -127,7 +139,8 @@ window.BOT_OR_NOT_DATA = [
             "Sie verbessern medizinische Bilddiagnostik",
             "Sie helfen bei der Kompression von Daten"
         ],
-        "explanation": "Deepfakes können zur Manipulation, Verleumdung oder gezielten Desinformation genutzt werden."
+        "explanation": "Deepfakes können zur Manipulation, Verleumdung oder gezielten Desinformation genutzt werden.",
+        "label": "Ethik"
     },
     {
         "question": "Welche Gefahr besteht, wenn KI im Arbeitsmarkt eingesetzt wird?",
@@ -137,7 +150,8 @@ window.BOT_OR_NOT_DATA = [
             "KI reduziert den Stromverbrauch von Computern",
             "KI steigert ausschließlich die Produktivität ohne Risiken"
         ],
-        "explanation": "KI kann ganze Berufsfelder automatisieren und soziale sowie ökonomische Ungleichheiten verschärfen."
+        "explanation": "KI kann ganze Berufsfelder automatisieren und soziale sowie ökonomische Ungleichheiten verschärfen.",
+        "label": "Ethik"
     },
     {
         "question": "Warum ist Transparenz in KI-Systemen wichtig?",
@@ -147,7 +161,8 @@ window.BOT_OR_NOT_DATA = [
             "Damit weniger Speicherplatz benötigt wird",
             "Damit KI-Systeme günstiger werden"
         ],
-        "explanation": "Transparenz ermöglicht es, Bias, Diskriminierung und Fehlentscheidungen aufzudecken."
+        "explanation": "Transparenz ermöglicht es, Bias, Diskriminierung und Fehlentscheidungen aufzudecken.",
+        "label": "Ethik"
     },
     {
         "question": "Welches ethische Problem entsteht bei autonomen Waffensystemen?",
@@ -157,7 +172,8 @@ window.BOT_OR_NOT_DATA = [
             "Sie können keine Ziele mehr erkennen",
             "Sie funktionieren nur bei Sonnenschein"
         ],
-        "explanation": "Autonome Waffensysteme werfen fundamentale Fragen nach menschlicher Verantwortung und ethischer Vertretbarkeit auf."
+        "explanation": "Autonome Waffensysteme werfen fundamentale Fragen nach menschlicher Verantwortung und ethischer Vertretbarkeit auf.",
+        "label": "Ethik"
     },
     {
         "question": "Warum ist Datensammlung durch KI ein ethisches Problem?",
@@ -167,6 +183,7 @@ window.BOT_OR_NOT_DATA = [
             "Sie verbessert die Akkulaufzeit von Smartphones",
             "Sie reduziert die Serverkosten"
         ],
-        "explanation": "KI-Systeme, die große Mengen an persönlichen Daten sammeln, bergen Risiken für Datenschutz und individuelle Freiheit."
+        "explanation": "KI-Systeme, die große Mengen an persönlichen Daten sammeln, bergen Risiken für Datenschutz und individuelle Freiheit.",
+        "label": "Ethik"
     }
 ]

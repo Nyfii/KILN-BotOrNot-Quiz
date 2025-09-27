@@ -4,6 +4,7 @@ Answer: Alan Turing
 Answer: Marvin Minsky
 Answer: Geoffrey Hinton
 Explanation: John McCarthy prägte 1956 den Begriff „Artificial Intelligence“ und gilt daher als Vater der KI.
+Label: Grundwissen KI
 
 ---
 
@@ -13,6 +14,7 @@ Answer: Maschinelles Lernen
 Answer: Computer Vision
 Answer: Natural Language Processing
 Explanation: Thermodynamik ist eine physikalische Disziplin, keine Teildisziplin der KI.
+Label: Grundwissen KI
 
 ---
 
@@ -22,6 +24,7 @@ Answer: Entscheidungsbäume
 Answer: Lineare Regression
 Answer: Genetische Algorithmen
 Explanation: Deep Learning basiert auf tiefen künstlichen neuronalen Netzen mit vielen Schichten.
+Label: Grundwissen KI
 
 ---
 
@@ -31,6 +34,7 @@ Answer: Lernen ohne jegliche Daten
 Answer: Lernen durch Ausprobieren ohne Feedback
 Answer: Lernen durch evolutionäre Prozesse
 Explanation: Beim überwachten Lernen (Supervised Learning) trainiert man ein Modell mit Eingaben und den dazugehörigen richtigen Ausgaben.
+Label: Grundwissen KI
 
 ---
 
@@ -40,6 +44,7 @@ Answer: Excel Tabellenkalkulation
 Answer: Siri Sprachassistent
 Answer: Google Translate
 Explanation: AlphaGo nutzte Reinforcement Learning, um den weltbesten Go-Spieler zu besiegen.
+Label: Grundwissen KI
 
 ---
 
@@ -49,6 +54,7 @@ Answer: Höhere Rechenleistung durch GPUs
 Answer: Geringere Genauigkeit bei großen Datensätzen
 Answer: Automatische Anpassung der Parameter
 Explanation: Bias entsteht, wenn Daten oder Algorithmen systematisch verzerrte Ergebnisse liefern.
+Label: Grundwissen KI
 
 ---
 
@@ -58,6 +64,7 @@ Answer: Einen Test zur Rechenleistung von Computern
 Answer: Einen Test zur Genauigkeit von KI-Bilderkennung
 Answer: Einen Test zur Sicherheit von Netzwerken
 Explanation: Der Turing-Test prüft, ob ein Mensch in einer Kommunikation nicht unterscheiden kann, ob er mit einer KI oder einer Person spricht.
+Label: Grundwissen KI
 
 ---
 
@@ -67,6 +74,7 @@ Answer: Geringere Stromkosten
 Answer: Bessere Bilderkennung
 Answer: Schnellere Suchmaschinen
 Explanation: Diskriminierung durch KI-Systeme ist ein zentrales ethisches Problem, das stark diskutiert wird.
+Label: Ethik
 
 ---
 
@@ -76,6 +84,7 @@ Answer: Excel
 Answer: Photoshop
 Answer: Linux
 Explanation: ChatGPT ist ein KI-Modell für natürliche Sprache und kann menschenähnliche Texte schreiben.
+Label: Grundwissen KI
 
 ---
 
@@ -85,6 +94,7 @@ Answer: KI, die besonders schnell trainiert werden kann
 Answer: KI, die automatisch neue Algorithmen generiert
 Answer: KI, die nur in einfacher Sprache kommuniziert
 Explanation: Explainable AI beschäftigt sich mit der Transparenz und Nachvollziehbarkeit von KI-Entscheidungen.
+Label: Grundwissen KI
 
 ---
 
@@ -94,6 +104,7 @@ Answer: Höhere Bildqualität bei Kameras
 Answer: Schnellere Ladezeiten von Webseiten
 Answer: Genauere Wettervorhersagen
 Explanation: Gesichtserkennung kann zu Überwachung, Missbrauch und Verlust von Privatsphäre führen.
+Label: Ethik
 
 ---
 
@@ -103,6 +114,7 @@ Answer: Eine Methode, um Algorithmen schneller zu machen
 Answer: Den Ausfall eines Systems durch Überlastung
 Answer: Ein neutraler Zufallsfehler im Programmcode
 Explanation: Algorithmic Bias beschreibt, dass KI diskriminierende oder verzerrte Ergebnisse liefert, weil die Trainingsdaten Vorurteile enthalten.
+Label: Grundwissen KI
 
 ---
 
@@ -112,6 +124,7 @@ Answer: Sie erhöhen die Qualität von Filmen
 Answer: Sie verbessern medizinische Bilddiagnostik
 Answer: Sie helfen bei der Kompression von Daten
 Explanation: Deepfakes können zur Manipulation, Verleumdung oder gezielten Desinformation genutzt werden.
+Label: Ethik
 
 ---
 
@@ -121,6 +134,7 @@ Answer: KI verbessert nur die Ergonomie am Arbeitsplatz
 Answer: KI reduziert den Stromverbrauch von Computern
 Answer: KI steigert ausschließlich die Produktivität ohne Risiken
 Explanation: KI kann ganze Berufsfelder automatisieren und soziale sowie ökonomische Ungleichheiten verschärfen.
+Label: Ethik
 
 ---
 
@@ -130,6 +144,7 @@ Answer: Damit Algorithmen schneller laufen
 Answer: Damit weniger Speicherplatz benötigt wird
 Answer: Damit KI-Systeme günstiger werden
 Explanation: Transparenz ermöglicht es, Bias, Diskriminierung und Fehlentscheidungen aufzudecken.
+Label: Ethik
 
 ---
 
@@ -139,6 +154,7 @@ Answer: Sie verbrauchen mehr Strom als herkömmliche Waffen
 Answer: Sie können keine Ziele mehr erkennen
 Answer: Sie funktionieren nur bei Sonnenschein
 Explanation: Autonome Waffensysteme werfen fundamentale Fragen nach menschlicher Verantwortung und ethischer Vertretbarkeit auf.
+Label: Ethik
 
 ---
 
@@ -148,3 +164,4 @@ Answer: Sie beschleunigt Internetverbindungen
 Answer: Sie verbessert die Akkulaufzeit von Smartphones
 Answer: Sie reduziert die Serverkosten
 Explanation: KI-Systeme, die große Mengen an persönlichen Daten sammeln, bergen Risiken für Datenschutz und individuelle Freiheit.
+Label: Ethik
