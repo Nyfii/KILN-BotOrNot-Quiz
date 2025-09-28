@@ -66,7 +66,9 @@ Where:
 - `Explanation`: Explanation why the Response is correct or incorrect
 - `Label`: Is the Label / Category of the Question
 
-`---` is the Question Separator. Single Line Comments can be written with `#` (Only at the beginning of a line). The Questions should be either grouped, by who asked them (if something is unclear this makes it easy asking back), or Question Type.
+`---` is the Question Separator.
+
+Single Line Comments can be written with `#` (Only at the beginning of a line). The Questions should be either grouped, by who asked them (if something is unclear this makes it easy asking back), or Question Type.
 
 **Naming Conventions**
 
