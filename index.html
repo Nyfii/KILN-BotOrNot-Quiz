@@ -126,7 +126,7 @@
 
                 feedbackElement.innerHTML = isCorrect
                     ? `Richtig! ${questions[currentQuestionIndex].explanation}`
-                    : `Leider Falsch. ${questions[currentQuestionIndex].explanation}`;
+                    : `Leider Falsch. Die richtige Antwort ist ${questions[currentQuestionIndex].answers[0]}. ${questions[currentQuestionIndex].explanation}`;
                 feedbackElement.classList.remove("hidden");
             }
 
