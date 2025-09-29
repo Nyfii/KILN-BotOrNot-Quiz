@@ -64,10 +64,13 @@
                         const text = await file.text();
                         const cleanedText = text.split("\n").filter(line => line.trim() && !line.trim().startsWith("#")).join("\n");
                         const parts = cleanedText.split(/^---$/m).map(part => part.trim());
-                        for (const part of parts) {
-                            mergedData.push(questionParser(part));
+                        for (let i = 0; i < parts.length; i++) {
+                            console.log(`${doQuestionValidation(parts[i], i + 1, file.name)}, ${file.name}`);
+                            // if (!doQuestionValidation(parts[i], i + 1, file.name)) continue; //TODO Add better Error Handling
+                            // mergedData.push(questionParser(part));
                         }
                     } catch (err) {
+                        console.log(err);
                     }
                 }
                 downloadButton.disabled = false;
@@ -103,8 +106,19 @@
                         questionObject.label = line.replace("Label:", "").trim();
                     }
                 }
-                //TODO Add Validation
                 return questionObject;
+            }
+
+            function doQuestionValidation(question, quetsionNumber, fileName) {
+                const answersCount = (question.match(/Answer:/g) || []).length;
+                const mediaCount = (question.match(/Media:/g) || []).length;
+                if (!question.includes("Label:")) return false;
+                if (!question.includes("Explanation:")) return false;
+                if (mediaCount > 2) return false;
+                if (mediaCount == 0 && !(answersCount == 2 || answersCount == 4)) return false;
+                if (mediaCount == 1 && answersCount !== 2) return false;
+                if (mediaCount == 2 && answersCount !== 0) return false;
+                return true;
             }
         </script>
     </body>
