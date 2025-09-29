@@ -94,7 +94,8 @@
                         button.onclick = () => choose(button);
                         answersElement.appendChild(button);
                     }
-                } else {
+                }
+                if (questions[index].hasOwnProperty("media")) {
                     randomOffset = Math.floor(Math.random() * (questions[index].media.length));
                     if (questions[index].media.length > 1) {
                         for (let i = 0; i < questions[index].media.length; i++) {
@@ -109,39 +110,14 @@
                             button.onclick = () => choose(button);
                             answersElement.appendChild(button);
                         }
-                        // Display only images
                     } else {
-                        console.log("Jo");
-                        // Display Images and Answer Buttons
+                        const imageElement = document.createElement("img");
+                        imageElement.src  = `Resources/${questions[index].media[0]}`;
+                        imageElement.className = "w-full h-60 object-cover rounded-2xl";
+                        questionElement.appendChild(imageElement);
                     }
-                    console.log("No text question found");
                 }
             }
-
-            /*
-                    })
-                } else if (item.type === "image") {
-                    imgWrap.classList.remove("hidden")
-                    item.images.forEach(img => {
-                        const btn = document.createElement("button")
-                        btn.className = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
-                        btn.setAttribute("data-correct", img.correct)
-                        const imageEl = document.createElement("img")
-                        imageEl.src = img.src
-                        imageEl.alt = "Option"
-                        imageEl.className = "w-full h-60 object-cover"
-                        btn.appendChild(imageEl)
-                        btn.onclick = () => choose(btn, item.type)
-                        imgWrap.appendChild(btn)
-                    })
-                }
-
-                const pct = ((index) / questions.length) * 100
-                progress.style.width = pct + "%"
-            }
-
-            render()
-            */
 
             function choose(button) {
                 let isCorrect = button.getAttribute("data-correct") === "true";
