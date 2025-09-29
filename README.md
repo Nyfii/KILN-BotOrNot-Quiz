@@ -43,6 +43,7 @@ Label: [LABEL]
 ---
 
 # 2 Media + 2 Answers
+Question: [QUESTION_TEXT_HERE]
 Media: [CORRECT_MEDIA]
 Media: [INCCORECT_MEDIA]
 Explanation: [EXPLANATION]
@@ -51,6 +52,7 @@ Label: [LABEL]
 ---
 
 # 1 Media + 2 Answers
+Question: [QUESTION_TEXT_HERE]
 Media: [MEDIA]
 Answer: [CORRECT_ANSWER]
 Answer: [INCORRECT_ANSWER]
