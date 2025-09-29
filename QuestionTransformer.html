@@ -64,10 +64,11 @@
                         const text = await file.text();
                         const cleanedText = text.split("\n").filter(line => line.trim() && !line.trim().startsWith("#")).join("\n");
                         const parts = cleanedText.split(/^---$/m).map(part => part.trim());
-                        for (const part of parts) {
-                            mergedData.push(questionParser(part));
+                        for (let i = 0; i < parts.length; i++) {
+                            if (await doQuestionValidation(parts[i], i + 1, file.name)) {mergedData.push(questionParser(parts[i]));}
                         }
                     } catch (err) {
+                        console.log(err);
                     }
                 }
                 downloadButton.disabled = false;
@@ -75,7 +76,6 @@
 
             downloadButton.addEventListener("click", () => {
                 const blob = new Blob(["window.BOT_OR_NOT_DATA = " + JSON.stringify(mergedData, null, 4)], { type: "application/json" });
-                console.log(blob);
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement("a");
                 a.href = url;
@@ -97,15 +97,122 @@
                         questionObject.answers ??= [];
                         questionObject.answers.push(line.replace("Answer:", "").trim());
                     } else if (line.startsWith("Media:")) {
-                        quetsionObject.media ??= [];
+                        questionObject.media ??= [];
                         questionObject.media.push(line.replace("Media:", "").trim());
                     } else if (line.startsWith("Label:")) {
                         questionObject.label = line.replace("Label:", "").trim();
                     }
                 }
-                //TODO Add Validation
                 return questionObject;
             }
+
+            async function doQuestionValidation(question, questionNumber, fileName) {
+                const answersCount = (question.match(/Answer:/g) || []).length;
+                const mediaCount = (question.match(/Media:/g) || []).length;
+                const questionCount = (question.match(/Question:/g) || []).length;
+                const labelCount = (question.match(/Label:/g) || []).length;
+                const explanationCount = (question.match(/Explanation:/g) || []).length;
+                if (!question.includes("Question:")) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} is missing a Question field.`;
+                    return false;
+                }
+
+                if (questionCount > 1) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has multiple Question fields.`;
+                    return false;
+                }
+
+                if (labelCount > 1) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has multiple Label fields.`;
+                    return false;
+                }
+
+                if (explanationCount > 1) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has multiple Explanation fields.`;
+                    return false;
+                }
+
+                if (answersCount > 4) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has more than 4 answers.`;
+                    return false;
+                }
+
+                if (!question.includes("Label:")) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} is missing a Label field.`;
+                    return false;
+                }
+
+                if (!question.includes("Explanation:")) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} is missing an Explanation field.`;
+                    return false;
+                }
+
+                if (mediaCount > 2) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has more than 2 media files.`;
+                    return false;
+                }
+
+                if (mediaCount == 0 && !(answersCount == 2 || answersCount == 4)) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has no media and does not have 2 or 4 answers.`;
+                    return false;
+                }
+                if (mediaCount == 1 && answersCount !== 2) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has 1 media and does not have 2 answers.`;
+                    return false;
+                }
+
+                if (mediaCount == 2 && answersCount !== 0) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has 2 media and does not have 0 answers.`;
+                    return false;
+                }
+
+                    for (const line of question.split("\n")) {
+                        if (!line.startsWith("Media:")) continue;
+                        const file = line.replace("Media:", "").trim()
+                        let exists = false
+                        if (/\.(png|jpe?g)$/i.test(file)) {
+                            exists = await checkIfImageExists(file)
+                        } else if (/\.mp4$/i.test(file)) {
+                            exists = await checkIfVideoExists(file)
+                        } else if (/\.(mp3|wav)$/i.test(file)) {
+                            exists = await checkIfAudioExists(file)
+                        }
+
+                        if (exists) continue;
+
+                        out.textContent += `\nQuestion ${questionNumber} in file ${fileName} references a media file that does not exist: ${file}`;
+                        return false
+                    }
+                return true;
+            }
+
+            function checkIfVideoExists(fileName) {
+                return new Promise(resolve => {
+                    const video = document.createElement("video");
+                    video.onloadeddata = () => resolve(true);
+                    video.onerror = () => resolve(false);
+                    video.src = `Resources/${fileName}`;
+                });
+            }
+
+            function checkIfAudioExists(fileName) {
+                return new Promise(resolve => {
+                    const audio = document.createElement("audio");
+                    audio.onloadeddata = () => resolve(true);
+                    audio.onerror = () => resolve(false);
+                    audio.src = `Resources/${fileName}`;
+                });
+            }
+
+            function checkIfImageExists(fileName) {
+                return new Promise(resolve => {
+                    const img = new Image()
+                    img.onload = () => resolve(true)
+                    img.onerror = () => resolve(false)
+                    img.src = `Resources/${fileName}`
+                })
+            }
+
         </script>
     </body>
 </html>
