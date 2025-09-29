@@ -109,8 +109,31 @@
             async function doQuestionValidation(question, questionNumber, fileName) {
                 const answersCount = (question.match(/Answer:/g) || []).length;
                 const mediaCount = (question.match(/Media:/g) || []).length;
+                const questionCount = (question.match(/Question:/g) || []).length;
+                const labelCount = (question.match(/Label:/g) || []).length;
+                const explanationCount = (question.match(/Explanation:/g) || []).length;
                 if (!question.includes("Question:")) {
                     out.textContent += `\nQuestion ${questionNumber} in file ${fileName} is missing a Question field.`;
+                    return false;
+                }
+
+                if (questionCount > 1) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has multiple Question fields.`;
+                    return false;
+                }
+
+                if (labelCount > 1) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has multiple Label fields.`;
+                    return false;
+                }
+
+                if (explanationCount > 1) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has multiple Explanation fields.`;
+                    return false;
+                }
+
+                if (answersCount > 4) {
+                    out.textContent += `\nQuestion ${questionNumber} in file ${fileName} has more than 4 answers.`;
                     return false;
                 }
 
