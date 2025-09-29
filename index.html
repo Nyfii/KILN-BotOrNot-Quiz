@@ -83,10 +83,10 @@
                 answersElement.classList.add("sm:grid-cols-2");
 
                 questionElement.textContent = questions[index].question;
-                randomOffset = Math.floor(Math.random() * (questions[index].answers.length));
                 if (questions[index].hasOwnProperty("answers")) {
+                    randomOffset = Math.floor(Math.random() * (questions[index].answers.length));
                     for (let i = 0; i < questions[index].answers.length; i++) {
-                        valueWithOffset = (i + randomOffset) % questions[index].answers.length;
+                        let valueWithOffset = (i + randomOffset) % questions[index].answers.length;
                         const button = document.createElement("button");
                         button.className = answerButtonStyles;
                         button.setAttribute("data-correct", valueWithOffset == 0 ? true : false);
@@ -94,8 +94,28 @@
                         button.onclick = () => choose(button);
                         answersElement.appendChild(button);
                     }
-                } else {
-                    console.log("No text question found");
+                }
+                if (questions[index].hasOwnProperty("media")) {
+                    randomOffset = Math.floor(Math.random() * (questions[index].media.length));
+                    if (questions[index].media.length > 1) {
+                        for (let i = 0; i < questions[index].media.length; i++) {
+                            let valueWithOffset = (i + randomOffset) % questions[index].media.length;
+                            const button = document.createElement("button");
+                            button.className = imageButtonStyles;
+                            button.setAttribute("data-correct", valueWithOffset == 0 ? true : false);
+                            const imageElement = document.createElement("img"); // This might need changing for videos later on
+                            imageElement.src = `Resources/${questions[index].media[valueWithOffset]}`;
+                            imageElement.className = "w-full h-60 object-cover";
+                            button.appendChild(imageElement);
+                            button.onclick = () => choose(button);
+                            answersElement.appendChild(button);
+                        }
+                    } else {
+                        const imageElement = document.createElement("img");
+                        imageElement.src  = `Resources/${questions[index].media[0]}`;
+                        imageElement.className = "w-full h-60 object-cover rounded-2xl";
+                        questionElement.appendChild(imageElement);
+                    }
                 }
             }
 
@@ -107,11 +127,24 @@
                         nextButton.disabled = false;
                         iteratedButton.classList.remove("border-white/20", "bg-white/10");
                         iteratedButton.classList.add("bg-emerald-500/20", "border-emerald-400/60");
+                        // There HAS to be a better way to solve this. TODO Refactor
+                        if (iteratedButton.querySelector("img")) {
+                            const overlay = document.createElement("div");
+                            overlay.className = "absolute inset-0 bg-emerald-500/40 pointer-events-none";
+                            iteratedButton.classList.add("relative");
+                            iteratedButton.appendChild(overlay);
+                        }
                     } else {
                         nextButton.disabled = false;
                         iteratedButton.classList.remove("border-white/20", "bg-white/10");
                         iteratedButton.classList.add("bg-rose-500/20", "border-rose-400/60");
-                                            }
+                        if (iteratedButton.querySelector("img")) {
+                            const overlay = document.createElement("div");
+                            overlay.className = "absolute inset-0 bg-rose-500/40 pointer-events-none";
+                            iteratedButton.classList.add("relative");
+                            iteratedButton.appendChild(overlay);
+                        }
+                    }
                     if (iteratedButton == button) {
                         iteratedButton.style.transition = "scale 0.5s ease-out, transform 0.5s ease-out";
                         iteratedButton.style.scale = "1.15";
@@ -124,9 +157,11 @@
                 });
                 answersElement.classList.remove("sm:grid-cols-2");
 
+                const hasAnswer = !!questions[currentQuestionIndex]?.answers?.length
+
                 feedbackElement.innerHTML = isCorrect
                     ? `Richtig! ${questions[currentQuestionIndex].explanation}`
-                    : `Leider Falsch. Die richtige Antwort ist ${questions[currentQuestionIndex].answers[0]}. ${questions[currentQuestionIndex].explanation}`;
+                    : `Leider Falsch. Die richtige Antwort ist ${hasAnswer ? questions[currentQuestionIndex].answers[0] : "das andere Bild"}. ${questions[currentQuestionIndex].explanation}`;
                 feedbackElement.classList.remove("hidden");
             }
 
@@ -149,97 +184,7 @@
             renderQuestion(currentQuestionIndex);
 
 
-            /*
-            let index = 0
-            let locked = false
 
-            const qEl = document.getElementById("question")
-            const aWrap = document.getElementById("answers")
-            const imgWrap = document.getElementById("image-answers")
-            const fb = document.getElementById("feedback")
-            const nextBtn = document.getElementById("nextBtn")
-            const qIndex = document.getElementById("qIndex")
-            const qTotal = document.getElementById("qTotal")
-            const progress = document.getElementById("progress")
-
-            qTotal.textContent = ` / ${questions.length}`
-
-            function render() {
-                const item = questions[index]
-                qIndex.textContent = index + 1
-                qEl.textContent = item.q
-                fb.classList.add("hidden")
-                fb.textContent = ""
-                // nextBtn.disabled = true
-                locked = false
-                aWrap.innerHTML = ""
-                imgWrap.innerHTML = ""
-                aWrap.classList.add("hidden")
-                imgWrap.classList.add("hidden")
-
-                if (item.type === "text") {
-                    aWrap.classList.remove("hidden")
-                    item.answers.forEach(a => {
-                        const btn = document.createElement("button")
-                        btn.className = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
-                        btn.setAttribute("data-correct", a.correct)
-                        btn.textContent = a.text
-                        btn.onclick = () => choose(btn, item.type)
-                        aWrap.appendChild(btn)
-                    })
-                } else if (item.type === "image") {
-                    imgWrap.classList.remove("hidden")
-                    item.images.forEach(img => {
-                        const btn = document.createElement("button")
-                        btn.className = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
-                        btn.setAttribute("data-correct", img.correct)
-                        const imageEl = document.createElement("img")
-                        imageEl.src = img.src
-                        imageEl.alt = "Option"
-                        imageEl.className = "w-full h-60 object-cover"
-                        btn.appendChild(imageEl)
-                        btn.onclick = () => choose(btn, item.type)
-                        imgWrap.appendChild(btn)
-                    })
-                }
-
-                const pct = ((index) / questions.length) * 100
-                progress.style.width = pct + "%"
-            }
-
-            function choose(btn, type) {
-                if (locked) return
-                locked = true
-                const correct = btn.getAttribute("data-correct") === "true"
-                const container = type === "text" ? aWrap : imgWrap
-                Array.from(container.children).forEach(b => {
-                    const isCorrect = b.getAttribute("data-correct") === "true"
-                    b.classList.remove("hover:-translate-y-0.5", "hover:shadow-lg")
-                    b.classList.add("opacity-90")
-                    if (isCorrect) {
-                        b.classList.remove("border-white/20", "bg-white/10")
-                        b.classList.add("bg-emerald-500/20", "border-emerald-400/60")
-                    } else {
-                        b.classList.remove("border-white/20", "bg-white/10")
-                        b.classList.add("bg-rose-500/20", "border-rose-400/60")
-                    }
-                    b.disabled = true
-                })
-                fb.innerHTML = correct
-                    ? `✅ Nice! ${questions[index].explanation}`
-                    : `❌ Not quite. ${questions[index].explanation}`
-                fb.classList.remove("hidden")
-                // nextBtn.disabled = false
-            }
-
-            nextBtn.addEventListener("click", () => {
-                index = (index + 1) % questions.length
-                console.log("Hello")
-                render()
-            })
-
-            render()
-            */
         </script>
     </body>
 </html>
