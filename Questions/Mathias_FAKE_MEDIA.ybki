@@ -4,7 +4,7 @@ Question: Ist das Bild KI-generiert oder echt?
 Answer: Das Bild ist KI-generiert
 Answer: Das Bild ist echt
 Explanation: Der deutsche Bundestag sieht so nicht aus. 
-
+Label: Media
 ---
 
 # 1 Media + 2 Answers
@@ -13,3 +13,4 @@ Question: Ist das Bild KI-generiert oder echt?
 Answer: Das Bild ist KI-generiert
 Answer: Das Bild ist echt
 Explanation: Der deutsche Bundestag sieht so nicht aus.
+Label: Media
