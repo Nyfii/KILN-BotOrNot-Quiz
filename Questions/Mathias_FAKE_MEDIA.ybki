@@ -1,3 +1,4 @@
+# 1 Media + 2 Answers
 Media: Bundestag_FAKE.jpeg
 Question: Ist das Bild KI-generiert oder echt?
 Answer: Das Bild ist KI-generiert
@@ -8,6 +9,7 @@ Explanation: Der deutsche Bundestag sieht so nicht aus.
 
 # 1 Media + 2 Answers
 Media: Bundestag_FAKE.jpeg
+Question: Ist das Bild KI-generiert oder echt?
 Answer: Das Bild ist KI-generiert
 Answer: Das Bild ist echt
 Explanation: Der deutsche Bundestag sieht so nicht aus.
