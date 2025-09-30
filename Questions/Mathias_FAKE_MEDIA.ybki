@@ -74,3 +74,13 @@ Answer: Das Bild ist KI-generiert
 Answer: Das Bild ist echt
 Explanation: Die Details wirken untypisch für reale Aufnahmen und deuten auf KI hin.
 Label: Media
+
+---
+
+# 1 Media + 2 Answers
+Media: Mathias_FAKE_Wiesn.jpeg
+Question: Ist das Bild KI-generiert oder echt?
+Answer: Das Bild ist KI-generiert
+Answer: Das Bild ist echt
+Explanation: Auf dem Freefall-Turm ist das Löwenbräu-Maskottchen zu sehen.
+Label: Media
