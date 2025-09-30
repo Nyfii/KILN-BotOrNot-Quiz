@@ -72,6 +72,9 @@
             const minIntervalBetweenQuestions = 5;
             const lastQuestions = [0];
 
+            const imageRegex = /\.(png|jpe?g)$/i;
+            const videoRegex = /\.mp4$/i;
+
             answerButtonStyles = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
             imageButtonStyles = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
 
@@ -103,18 +106,40 @@
                             const button = document.createElement("button");
                             button.className = imageButtonStyles;
                             button.setAttribute("data-correct", valueWithOffset == 0 ? true : false);
-                            const imageElement = document.createElement("img"); // This might need changing for videos later on
-                            imageElement.src = `Resources/${questions[index].media[valueWithOffset]}`;
-                            imageElement.className = "w-full h-[400px] object-scale-down"; //"w-full h-60 object-cover";
-                            button.appendChild(imageElement);
+                            if (videoRegex.test(questions[index].media[valueWithOffset])) {
+                                const videoElement = document.createElement("video");
+                                videoElement.src = `Resources/${questions[index].media[valueWithOffset]}`;
+                                videoElement.className = "w-full h-[400px] object-scale-down";
+                                videoElement.autoplay = true;
+                                videoElement.loop = true;
+                                videoElement.muted = true;
+                                button.appendChild(videoElement);
+                            }
+                            if (imageRegex.test(questions[index].media[valueWithOffset])) {
+                                const imageElement = document.createElement("img");
+                                imageElement.src = `Resources/${questions[index].media[valueWithOffset]}`;
+                                imageElement.className = "w-full h-[400px] object-scale-down";
+                                button.appendChild(imageElement);
+                            }
                             button.onclick = () => choose(button);
                             answersElement.appendChild(button);
                         }
                     } else {
                         const imageElement = document.createElement("img");
-                        imageElement.src  = `Resources/${questions[index].media[0]}`;
-                        imageElement.className = "w-full h-[400px] object-scale-down";//"w-full h-60 object-cover rounded-2xl";
-                        questionElement.appendChild(imageElement);
+                        if (videoRegex.test(questions[index].media[0])) {
+                            const videoElement = document.createElement("video");
+                            videoElement.src = `Resources/${questions[index].media[0]}`;
+                            videoElement.className = "w-full h-[400px] object-scale-down";
+                            videoElement.autoplay = true;
+                            videoElement.loop = true;
+                            videoElement.muted = true;
+                            questionElement.appendChild(videoElement);
+                        }
+                        if (imageRegex.test(questions[index].media[0])) {
+                            imageElement.src  = `Resources/${questions[index].media[0]}`;
+                            imageElement.className = "w-full h-[400px] object-scale-down";
+                            questionElement.appendChild(imageElement);
+                        }
                     }
                 }
             }
