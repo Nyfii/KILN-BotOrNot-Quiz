@@ -15,6 +15,46 @@
       }
     </style>
     <body class="min-h-screen flex flex-col bg-gradient-to-br from-[#134383] to-[#009faf] text-slate-100 antialiased relative overflow-hidden">
+        <button id="settings-button" class="fixed top-4 right-4 z-50 px-4 py-2 bg-blue-600 text-white rounded shadow font-semibold hover:bg-blue-700 transition">
+            Settings
+        </button>
+        <div id="settings-panel" class="hidden fixed top-0 right-0 h-full w-80 bg-white border-l border-gray-200 shadow-lg z-40 flex-col p-8 space-y-4 text-black">
+            <h2 class="text-xl font-bold mb-4">Settings</h2>
+            <form class="space-y-6">
+                <div>
+                    <label class="block font-semibold mb-2">Question Architecture</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-2">
+                            <input id="include-media-input" type="checkbox" name="IncludeMedia">
+                            <span>Include Media</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input id="include-text-input" type="checkbox" name="IncludeText">
+                            <span>Include Text</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Labels</label>
+                    <div id="settings-labels" class="space-y-2">
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="permission-group-2" value="read" class="accent-blue-600" checked>
+                            <span>If you are seeing, something went wrong</span>
+                        </label>
+                    </div>
+                </div>
+                <label class="block font-semibold mb-2">Order</label>
+                <div class="flex items-center space-x-2">
+                    <label class="flex items-center space-x-2">
+                        <input id="random-order-input" type="checkbox" name="permission-group-2" value="read" class="accent-blue-600" checked>
+                        <span>Use random Order</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+
+        <!------------------------------------------------------------------------------->
+
         <div class="absolute top-20 left-0 w-72 h-72 bg-[#009faf]/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-40 right-0 w-80 h-80 bg-[#134383]/30 rounded-full blur-3xl"></div>
 
@@ -56,6 +96,8 @@
         <footer class="w-full bg-white text-gray-800 text-center py-6 mt-8 relative z-10">
             Footer space (Customize Me!!!!! I want to look AWESOME!!)
         </footer>
+
+        <!------------------------------------------------------------------------------------------------------------------------------------------>
     
         <script src="Questions/Questions.js"></script>
         <script src="Questions/Questions_Test.js"></script>
@@ -66,16 +108,32 @@
             const answersElement = document.getElementById("answers");
             const feedbackElement = document.getElementById("feedback");
             const nextButton = document.getElementById("nextBtn");
+            const settingsButton = document.getElementById("settings-button");
             const questionIndexElement = document.getElementById("questionIndex");
             const questionLabelElement = document.getElementById("question-label");
+            const settingsPanel = document.getElementById("settings-panel");
+            const settingsLabels = document.getElementById("settings-labels");
+            const randomOrderInput = document.getElementById("random-order-input");
+            const includeMediaInput = document.getElementById("include-media-input");
+            const includeTextInput = document.getElementById("include-text-input");
  
-            let doQuestionsInOrder = true;
             let currentQuestionIndex = 0;
             const minIntervalBetweenQuestions = 5;
             const lastQuestions = [0];
 
             const imageRegex = /\.(png|jpe?g)$/i;
             const videoRegex = /\.mp4$/i;
+
+            let activeLabels = Object.fromEntries(
+                questions.flatMap(obj => obj.label).map(label => [label, true])
+            );
+
+            let activeArchitectures = {
+                text: true,
+                media: true
+            };
+
+            let doQuestionsInOrder = true;
 
             answerButtonStyles = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
             imageButtonStyles = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
@@ -196,6 +254,15 @@
                 feedbackElement.classList.remove("hidden");
             }
 
+            function loadTestQuestions() {
+                questions = window.BOT_OR_NOT_TEST;
+                activeLabels = Object.fromEntries(
+                    questions.flatMap(obj => obj.label).map(label => [label, true])
+                );
+
+                renderQuestion(currentQuestionIndex);
+            }
+
             nextButton.addEventListener("click", () => {
                 if (doQuestionsInOrder) {
                     currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
@@ -212,10 +279,62 @@
                 renderQuestion(currentQuestionIndex);
             });
 
-            function loadTestQuestions() {
-                questions = window.BOT_OR_NOT_TEST;
-                renderQuestion(currentQuestionIndex);
-            }
+            settingsButton.addEventListener("click", () => {
+                settingsPanel.classList.toggle("hidden");
+                if(settingsPanel.classList.contains("hidden")) {
+                    doQuestionsInOrder = !randomOrderInput.checked;
+                    activeArchitectures.text = includeTextInput.checked;
+                    activeArchitectures.media = includeMediaInput.checked;
+                    if (!includeMediaInput.checked && !includeTextInput.checked) {
+                        activeArchitectures.text = true;
+                        activeArchitectures.media = true;
+                    }
+                    let findOnetrueLabel = false;
+                    for (let label in activeLabels) {
+                        const checkbox = document.querySelector(`input[name="${label}"]`);
+                        if (checkbox) {
+                            activeLabels[label] = checkbox.checked;
+                            findOnetrueLabel = findOnetrueLabel || checkbox.checked;
+                        }
+                    }
+                    if (!findOnetrueLabel) {
+                        for (let label in activeLabels) {
+                            activeLabels[label] = true;
+                        }
+                    }
+
+                    // --------
+                    questions = window.BOT_OR_NOT_DATA.filter(q =>
+                        activeLabels[q.label] &&
+                        (
+                            (activeArchitectures.media && q.hasOwnProperty("media")) ||
+                            (activeArchitectures.text && !q.hasOwnProperty("media"))
+                        )
+                    );
+
+
+                    renderQuestion(0);
+                } else {
+                    settingsLabels.innerHTML = ""
+                    for (let label in activeLabels) {
+                        const labelElement = document.createElement("label");
+                        const inputElement = document.createElement("input");
+                        const spanElement = document.createElement("span");
+                        labelElement.className = "flex items-center space-x-2";
+                        inputElement.type = "checkbox";
+                        inputElement.name = `${label}`;
+                        inputElement.value = label;
+                        inputElement.checked = activeLabels[label];
+                        spanElement.textContent = label;
+                        labelElement.appendChild(inputElement);
+                        labelElement.appendChild(spanElement);
+                        settingsLabels.appendChild(labelElement);
+                    } 
+                    randomOrderInput.checked = !doQuestionsInOrder;
+                    includeTextInput.checked = activeArchitectures.text;
+                    includeMediaInput.checked = activeArchitectures.media;
+                }
+            });
 
             renderQuestion(currentQuestionIndex);
 
