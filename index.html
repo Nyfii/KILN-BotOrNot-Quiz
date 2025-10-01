@@ -67,6 +67,7 @@
             const feedbackElement = document.getElementById("feedback");
             const nextButton = document.getElementById("nextBtn");
             const questionIndexElement = document.getElementById("questionIndex");
+            const questionLabelElement = document.getElementById("question-label");
  
             let doQuestionsInOrder = true;
             let currentQuestionIndex = 0;
@@ -79,6 +80,8 @@
             answerButtonStyles = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
             imageButtonStyles = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
 
+
+            // Please for the love of god refactor this mess
             function renderQuestion(index) {
                 nextButton.disabled = true;
                 answersElement.innerHTML = "";
@@ -87,6 +90,7 @@
                 answersElement.classList.add("sm:grid-cols-2");
 
                 questionElement.textContent = questions[index].question;
+                questionLabelElement.textContent = questions[index].label || "";
                 if (questions[index].hasOwnProperty("answers")) {
                     randomOffset = Math.floor(Math.random() * (questions[index].answers.length));
                     for (let i = 0; i < questions[index].answers.length; i++) {
@@ -145,6 +149,7 @@
                 }
             }
 
+            // REFACTOR MEEEEEEEEEEEEEEE
             function choose(button) {
                 let isCorrect = button.getAttribute("data-correct") === "true";
                 answersElement.querySelectorAll("button").forEach(iteratedButton => {
