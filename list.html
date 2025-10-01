@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question-Table</title>
+        <script src="Tailwind.js"></script>
+    </head>
+    <body class="bg-gray-100 min-h-screen flex flex-col items-center py-8">
+        <div class="container mx-auto px-2">
+            <h1 class="text-2xl font-bold mb-4 text-center">Alle Quizfragen (dynamisch aus Questions.js)</h1>
+            <div class="overflow-x-auto bg-white shadow rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200" id="questions-table">
+                    <thead class="bg-blue-600">
+                        <tr>
+                            <th class="px-3 py-2 text-left text-xs font-medium text-white uppercase">#</th>
+                            <th class="px-3 py-2 text-left text-xs font-medium text-white uppercase">Questions</th>
+                            <th class="px-3 py-2 text-left text-xs font-medium text-white uppercase">Media</th>
+                            <th class="px-3 py-2 text-left text-xs font-medium text-white uppercase">Answer</th>
+                            <th class="px-3 py-2 text-left text-xs font-medium text-white uppercase">Explanation</th>
+                            <th class="px-3 py-2 text-left text-xs font-medium text-white uppercase">Label</th>
+                        </tr>
+                    </thead>
+                    <tbody id="questions-tbody" class="bg-white divide-y divide-gray-100">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="Questions/Questions.js"></script>
+        <script>
+            const questions = window.BOT_OR_NOT_DATA || [];
+            const tbody = document.getElementById("questions-tbody");
+
+            questions.forEach((q, i) => {
+                const tr = document.createElement('tr');
+
+                const numberElement = document.createElement('td');
+                numberElement.className = "px-3 py-2 align-top text-gray-600";
+                numberElement.textContent = i + 1;
+
+                const questionElement = document.createElement('td');
+                questionElement.className = "px-3 py-2 align-top font-semibold";
+                questionElement.textContent = q.question || '-';
+
+                const mediaElement = document.createElement('td');
+                if (Array.isArray(q.media) && q.media.length) {
+                    const listElement = document.createElement('ul');
+                    listElement.className = "list-disc ml-4";
+                    q.media.forEach(m => {
+                        const li = document.createElement('li');
+                        li.className = "break-all";
+                        li.textContent = m;
+                        listElement.appendChild(li);
+                    });
+                    mediaElement.appendChild(listElement);
+                } else {
+                    mediaElement.className = "px-3 py-2 align-top text-gray-400";
+                    mediaElement.textContent = '-';
+                }
+
+                const answerElement = document.createElement('td');
+                if (Array.isArray(q.answers) && q.answers.length) {
+                    const listElement = document.createElement('ul');
+                    listElement.className = "list-decimal ml-4";
+                    q.answers.forEach(a => {
+                        const li = document.createElement('li');
+                        li.textContent = a;
+                        listElement.appendChild(li);
+                    });
+                    answerElement.appendChild(listElement);
+                } else {
+                    answerElement.className = "px-3 py-2 align-top text-gray-400";
+                    answerElement.textContent = '-';
+                }
+
+                const explanationElement = document.createElement('td');
+                explanationElement.className = "px-3 py-2 align-top";
+                explanationElement.textContent = q.explanation || '-';
+
+                const labelElement = document.createElement('td');
+                labelElement.className = "px-3 py-2 align-top";
+                labelElement.textContent = q.label || '-';
+
+                tr.appendChild(numberElement);
+                tr.appendChild(questionElement);
+                tr.appendChild(mediaElement);
+                tr.appendChild(answerElement);
+                tr.appendChild(explanationElement);
+                tr.appendChild(labelElement);
+
+                tbody.appendChild(tr);
+            });
+        </script>
+    </body>
+</html>
