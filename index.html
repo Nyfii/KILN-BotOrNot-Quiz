@@ -58,8 +58,9 @@
         </footer>
     
         <script src="Questions/Questions.js"></script>
+        <script src="Questions/Questions_Test.js"></script>
         <script>
-            const questions = window.BOT_OR_NOT_DATA;
+            let questions = window.BOT_OR_NOT_DATA;
 
             const questionElement = document.getElementById("question");
             const answersElement = document.getElementById("answers");
@@ -205,6 +206,11 @@
                 }
                 renderQuestion(currentQuestionIndex);
             });
+
+            function loadTestQuestions() {
+                questions = window.BOT_OR_NOT_TEST;
+                renderQuestion(currentQuestionIndex);
+            }
 
             renderQuestion(currentQuestionIndex);
 
