@@ -36,8 +36,6 @@ window.BOT_OR_NOT_TEST = [
         "answers": [
             "...",
             "...",
-            "...",
-            "..."
         ],
         "explanation": "...",
         "label": "..."

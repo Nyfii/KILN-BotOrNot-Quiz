@@ -256,6 +256,10 @@
 
             function loadTestQuestions() {
                 questions = window.BOT_OR_NOT_TEST;
+                activeLabels = Object.fromEntries(
+                    questions.flatMap(obj => obj.label).map(label => [label, true])
+                );
+
                 renderQuestion(currentQuestionIndex);
             }
 
@@ -298,6 +302,18 @@
                             activeLabels[label] = true;
                         }
                     }
+
+                    // --------
+                    questions = window.BOT_OR_NOT_DATA.filter(q =>
+                        activeLabels[q.label] &&
+                        (
+                            (activeArchitectures.media && q.hasOwnProperty("media")) ||
+                            (activeArchitectures.text && !q.hasOwnProperty("media"))
+                        )
+                    );
+
+
+                    renderQuestion(0);
                 } else {
                     settingsLabels.innerHTML = ""
                     for (let label in activeLabels) {
