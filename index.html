@@ -15,6 +15,49 @@
       }
     </style>
     <body class="min-h-screen flex flex-col bg-gradient-to-br from-[#134383] to-[#009faf] text-slate-100 antialiased relative overflow-hidden">
+        <button id="settings-button" class="fixed top-4 right-4 z-50 px-4 py-2 bg-blue-600 text-white rounded shadow font-semibold hover:bg-blue-700 transition">
+            Settings
+        </button>
+        <div id="settings-panel" class="hidden fixed top-0 right-0 h-full w-80 bg-white border-l border-gray-200 shadow-lg z-40 flex-col p-8 space-y-4 text-black">
+            <h2 class="text-xl font-bold mb-4">Settings</h2>
+            <form class="space-y-6">
+                <div>
+                    <label class="block font-semibold mb-2">Question Architecture</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="feature-group-1" value="featureA" class="accent-blue-600" checked>
+                            <span>Include Media</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="feature-group-1" value="featureB" class="accent-blue-600">
+                            <span>Include Text</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-2">Labels</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-2">
+                            <input type="checkbox" name="permission-group-2" value="read" class="accent-blue-600" checked>
+                            <span>If you are seeing, something went wrong</span>
+                        </label>
+                    </div>
+                </div>
+                <label class="block font-semibold mb-2">Order</label>
+                <div class="flex items-center space-x-2">
+                    <label class="flex items-center space-x-2">
+                        <input type="checkbox" name="permission-group-2" value="read" class="accent-blue-600" checked>
+                        <span>If you are seeing, something went wrong</span>
+                    </label>
+                </div>
+                <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 transition">
+                    Save Changes
+                </button>
+            </form>
+        </div>
+
+        <!------------------------------------------------------------------------------->
+
         <div class="absolute top-20 left-0 w-72 h-72 bg-[#009faf]/20 rounded-full blur-3xl"></div>
         <div class="absolute bottom-40 right-0 w-80 h-80 bg-[#134383]/30 rounded-full blur-3xl"></div>
 
@@ -66,8 +109,10 @@
             const answersElement = document.getElementById("answers");
             const feedbackElement = document.getElementById("feedback");
             const nextButton = document.getElementById("nextBtn");
+            const settingsButton = document.getElementById("settings-button");
             const questionIndexElement = document.getElementById("questionIndex");
             const questionLabelElement = document.getElementById("question-label");
+            const settingsPanel = document.getElementById("settings-panel");
  
             let doQuestionsInOrder = true;
             let currentQuestionIndex = 0;
@@ -196,6 +241,11 @@
                 feedbackElement.classList.remove("hidden");
             }
 
+            function loadTestQuestions() {
+                questions = window.BOT_OR_NOT_TEST;
+                renderQuestion(currentQuestionIndex);
+            }
+
             nextButton.addEventListener("click", () => {
                 if (doQuestionsInOrder) {
                     currentQuestionIndex = (currentQuestionIndex + 1) % questions.length;
@@ -212,10 +262,9 @@
                 renderQuestion(currentQuestionIndex);
             });
 
-            function loadTestQuestions() {
-                questions = window.BOT_OR_NOT_TEST;
-                renderQuestion(currentQuestionIndex);
-            }
+            settingsButton.addEventListener("click", () => {
+                settingsPanel.classList.toggle("hidden");
+            });
 
             renderQuestion(currentQuestionIndex);
 
