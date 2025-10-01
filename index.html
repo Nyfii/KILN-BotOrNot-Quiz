@@ -278,12 +278,29 @@
             settingsButton.addEventListener("click", () => {
                 settingsPanel.classList.toggle("hidden");
                 if(settingsPanel.classList.contains("hidden")) {
-                    console.log("Settings closed");
+                    doQuestionsInOrder = !randomOrderInput.checked;
+                    activeArchitectures.text = includeTextInput.checked;
+                    activeArchitectures.media = includeMediaInput.checked;
+                    if (!includeMediaInput.checked && !includeTextInput.checked) {
+                        activeArchitectures.text = true;
+                        activeArchitectures.media = true;
+                    }
+                    let findOnetrueLabel = false;
+                    for (let label in activeLabels) {
+                        const checkbox = document.querySelector(`input[name="${label}"]`);
+                        if (checkbox) {
+                            activeLabels[label] = checkbox.checked;
+                            findOnetrueLabel = findOnetrueLabel || checkbox.checked;
+                        }
+                    }
+                    if (!findOnetrueLabel) {
+                        for (let label in activeLabels) {
+                            activeLabels[label] = true;
+                        }
+                    }
                 } else {
-                    console.log("Settings opened");
                     settingsLabels.innerHTML = ""
                     for (let label in activeLabels) {
-                        console.log(label);
                         const labelElement = document.createElement("label");
                         const inputElement = document.createElement("input");
                         const spanElement = document.createElement("span");
@@ -301,7 +318,6 @@
                     includeTextInput.checked = activeArchitectures.text;
                     includeMediaInput.checked = activeArchitectures.media;
                 }
-                console.log(activeLabels);
             });
 
             renderQuestion(currentQuestionIndex);
