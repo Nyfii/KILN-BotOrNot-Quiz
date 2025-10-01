@@ -25,18 +25,18 @@
                     <label class="block font-semibold mb-2">Question Architecture</label>
                     <div class="space-y-2">
                         <label class="flex items-center space-x-2">
-                            <input type="checkbox" name="feature-group-1" value="featureA" class="accent-blue-600" checked>
+                            <input id="include-media-input" type="checkbox" name="IncludeMedia">
                             <span>Include Media</span>
                         </label>
                         <label class="flex items-center space-x-2">
-                            <input type="checkbox" name="feature-group-1" value="featureB" class="accent-blue-600">
+                            <input id="include-text-input" type="checkbox" name="IncludeText">
                             <span>Include Text</span>
                         </label>
                     </div>
                 </div>
                 <div>
                     <label class="block font-semibold mb-2">Labels</label>
-                    <div class="space-y-2">
+                    <div id="settings-labels" class="space-y-2">
                         <label class="flex items-center space-x-2">
                             <input type="checkbox" name="permission-group-2" value="read" class="accent-blue-600" checked>
                             <span>If you are seeing, something went wrong</span>
@@ -46,13 +46,10 @@
                 <label class="block font-semibold mb-2">Order</label>
                 <div class="flex items-center space-x-2">
                     <label class="flex items-center space-x-2">
-                        <input type="checkbox" name="permission-group-2" value="read" class="accent-blue-600" checked>
-                        <span>If you are seeing, something went wrong</span>
+                        <input id="random-order-input" type="checkbox" name="permission-group-2" value="read" class="accent-blue-600" checked>
+                        <span>Use random Order</span>
                     </label>
                 </div>
-                <button class="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 transition">
-                    Save Changes
-                </button>
             </form>
         </div>
 
@@ -99,6 +96,8 @@
         <footer class="w-full bg-white text-gray-800 text-center py-6 mt-8 relative z-10">
             Footer space (Customize Me!!!!! I want to look AWESOME!!)
         </footer>
+
+        <!------------------------------------------------------------------------------------------------------------------------------------------>
     
         <script src="Questions/Questions.js"></script>
         <script src="Questions/Questions_Test.js"></script>
@@ -113,14 +112,28 @@
             const questionIndexElement = document.getElementById("questionIndex");
             const questionLabelElement = document.getElementById("question-label");
             const settingsPanel = document.getElementById("settings-panel");
+            const settingsLabels = document.getElementById("settings-labels");
+            const randomOrderInput = document.getElementById("random-order-input");
+            const includeMediaInput = document.getElementById("include-media-input");
+            const includeTextInput = document.getElementById("include-text-input");
  
-            let doQuestionsInOrder = true;
             let currentQuestionIndex = 0;
             const minIntervalBetweenQuestions = 5;
             const lastQuestions = [0];
 
             const imageRegex = /\.(png|jpe?g)$/i;
             const videoRegex = /\.mp4$/i;
+
+            let activeLabels = Object.fromEntries(
+                questions.flatMap(obj => obj.label).map(label => [label, true])
+            );
+
+            let activeArchitectures = {
+                text: true,
+                media: true
+            };
+
+            let doQuestionsInOrder = true;
 
             answerButtonStyles = "answer w-full rounded-2xl border border-white/20 bg-white/10 text-center px-5 py-4 text-base font-medium text-white/90 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
             imageButtonStyles = "answer overflow-hidden rounded-2xl border border-white/20 bg-white/10 transition transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#009faf]/60"
@@ -264,6 +277,31 @@
 
             settingsButton.addEventListener("click", () => {
                 settingsPanel.classList.toggle("hidden");
+                if(settingsPanel.classList.contains("hidden")) {
+                    console.log("Settings closed");
+                } else {
+                    console.log("Settings opened");
+                    settingsLabels.innerHTML = ""
+                    for (let label in activeLabels) {
+                        console.log(label);
+                        const labelElement = document.createElement("label");
+                        const inputElement = document.createElement("input");
+                        const spanElement = document.createElement("span");
+                        labelElement.className = "flex items-center space-x-2";
+                        inputElement.type = "checkbox";
+                        inputElement.name = `${label}`;
+                        inputElement.value = label;
+                        inputElement.checked = activeLabels[label];
+                        spanElement.textContent = label;
+                        labelElement.appendChild(inputElement);
+                        labelElement.appendChild(spanElement);
+                        settingsLabels.appendChild(labelElement);
+                    } 
+                    randomOrderInput.checked = !doQuestionsInOrder;
+                    includeTextInput.checked = activeArchitectures.text;
+                    includeMediaInput.checked = activeArchitectures.media;
+                }
+                console.log(activeLabels);
             });
 
             renderQuestion(currentQuestionIndex);
