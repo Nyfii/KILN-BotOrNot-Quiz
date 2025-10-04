@@ -699,7 +699,7 @@ Media: Nyfii_FAKE_StreetCrossing.jpg
 Answer: Nein
 Answer: Ja
 Explanation: Die Verkehrsschilder sind komplett falsch.
-Label: Bild-Erkennung.
+Label: Bild-Erkennung
 
 ---
 
@@ -708,7 +708,7 @@ Media: Nyfii_FAKE_TrainLounge.jpg
 Answer: Nein
 Answer: Ja
 Explanation: Gesichter.
-Label: Bild-Erkennung.
+Label: Bild-Erkennung
 
 ---
 
@@ -717,7 +717,7 @@ Media: Nyfii_REAL_Monopoly.jpg
 Answer: Ja
 Answer: Nein
 Explanation: :)
-Label: Bild-Erkennung.
+Label: Bild-Erkennung
 
 ---
 
@@ -726,4 +726,4 @@ Media: Nyfii_REAL_Tower.jpg
 Answer: Ja
 Answer: Nein
 Explanation: :)
-Label: Bild-Erkennung.
+Label: Bild-Erkennung
