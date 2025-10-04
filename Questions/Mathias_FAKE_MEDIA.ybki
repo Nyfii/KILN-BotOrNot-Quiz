@@ -90,7 +90,7 @@ Label: Media
 # 1 Media + 2 Answers
 Media: Mathias_REAL_SchröderLola.jpg
 Question: Ist das Bild KI-generiert oder echt?
-Answer: Das Bild ist KI-generiert
 Answer: Das Bild ist echt
-Explanation: Auf dem Freefall-Turm ist das Löwenbräu-Maskottchen zu sehen.
-Label: Media
+Answer: Das Bild ist KI-generiert
+Explanation: Die beiden sind echt und heißen Lola und Schröder <3.
+Label: Bilderkennung
