@@ -1,79 +1,729 @@
-Question: Welche Programmiersprache wird besonders häufig für KI-Entwicklung genutzt?
-Answer: Python
-Answer: Java
-Answer: C++
-Answer: PHP
-Explanation: Python ist eine sehr einfach zu verwendene Sprache, in der es viele Bibliotheken und Frameworks gibt. Performancekritische Komponenten sind meist in C++ geschrieben.
+Question: Was bedeutet der Begriff "Künstliche Intelligenz" allgemein?
+Answer: Maschinen, die menschenähnliche Aufgaben lösen
+Answer: Programme, die nur offline laufen
+Answer: Roboter mit Armen und Beinen
+Answer: Systeme, die nur schneller rechnen als andere Computer
+Explanation: KI im engeren Sinn meint Systeme, die Denk- oder Lernaufgaben übernehmen. Offline-Betrieb oder Rechengeschwindigkeit sind keine Definition von Intelligenz. Ein Roboterkörper bedeutet ebenfalls nicht automatisch KI.
+Label: Grundlagen
 
 ---
 
-Question: Welche KI-Anwendung hat das Potential, demokratische Wahlen zu beeinflussen?
-Answer: Alle Antworten sind richtig
-Answer: Deepfake-Videos
-Answer: Empfehlungssysteme in sozialen Medien
-Answer: Automatische Nachrichten-Generierung
-Explanation: Deepfakes, Empfehlungssysteme und automatische Nachrichten können jeweils das Wahlverhalten manipuliern.
+Question: Welche Beschreibung passt am besten zu KI?
+Answer: Ein System, das lernen und handeln kann
+Answer: Ein schneller Computer mit vielen Kernen
+Answer: Ein Gerät zum Speichern von Daten
+Answer: Eine Software, die nur programmierten Befehlen folgt
+Explanation: KI ist durch Wahrnehmen, Lernen und Handeln gekennzeichnet. Rechenstärke oder Datenspeicherung allein sind keine Intelligenz. Auch klassische Programme, die nur Anweisungen abarbeiten, gelten nicht als KI.
+Label: Grundlagen
 
 ---
 
-Question: Welches Land hat 2024 das weltweit erste umfassende KI-Gesetz ("AI-Act") verabschiedet?
-Answer: Europäische Union
-Answer: USA
-Answer: China
-Answer: Japan
-Explanation: Sie hat klare Regeln zur Sicherheit, Transparenz und Risikoeinstufung von KI-Systemen eingeführt.
+Question: Wofür nutzt man in der KI eine Entscheidungsfunktion?
+Answer: Um Eingaben in Entscheidungen zu übersetzen
+Answer: Um Speicherplatz effizienter zu nutzen
+Answer: Um die Benutzeroberfläche zu verschönern
+Answer: Um die Geschwindigkeit eines Programms zu erhöhen
+Explanation: Entscheidungsfunktionen ordnen Eingaben Kategorien oder Ergebnissen zu. Speicherplatz, Design oder Geschwindigkeit betreffen technische Aspekte, nicht die Entscheidungslogik.
+Label: Lernen und Entscheidungsfindung
 
 ---
 
-Question: Welches dieser Beispiele ist ein Deepfake?
-Answer: Ein manipuliertes Video, in dem eine Person Worte sagt, die sie nie gesagt hat
-Answer: Ein Roboter, der Auto fährt
-Answer: Ein Computerspiel mit KI-Gegnern
-Answer: Eine App, die deine Schritte zählt
-Explanation: ...
+Question: Welches Beispiel zeigt eine Entscheidungsfunktion?
+Answer: Ein Filter, der Spam von E-Mails trennt
+Answer: Ein Programm, das den Bildschirmhintergrund ändert
+Answer: Eine Liste aller Internetseiten
+Answer: Eine Anwendung, die Ordner alphabetisch sortiert
+Explanation: Spamfilter basieren auf Klassifizierung durch Entscheidungsfunktionen. Hintergrund ändern, Listen oder Sortierung sind keine Entscheidungen im KI-Sinn, sondern einfache Programmfunktionen.
+Label: Lernen und Entscheidungsfindung
 
 ---
 
-Question: Wofür steht die Abkürzung "AI"?
-Answer: Artificial Intelligence
-Answer: Algorithmic Interface
-Answer: Automatic Interaction
-Answer: Advanced Innovation
-Explanation: ...
+Question: Was bedeutet "Training" bei einer KI in einfachen Worten?
+Answer: Die KI lernt aus Daten oder Feedback, um bessere Entscheidungen zu treffen
+Answer: Die KI geht zur Schule mit menschlichen Lehrern
+Answer: Die KI verbessert automatisch ihre Hardware
+Answer: Die KI kopiert Antworten direkt aus dem Internet
+Explanation: Training heißt, dass die KI ihre Parameter durch viele Beispiele anpasst. Zur Schule gehen ist eine menschliche Metapher. Hardware-Verbesserung hat mit Training nichts zu tun. Antworten aus dem Internet zu kopieren ist kein Lernprozess, sondern nur Abrufen.
+Label: Grundlagen
 
 ---
 
-Question: Wann wurde der Begriff "Künstliche Intelligenz" offiziell eingeführt?
-Answer: 1956
-Answer: 1936
-Answer: 1972
-Answer: 1995
-Explanation: ...
+Question: Warum nutzt ein KI-Agent ein Optimierungsverfahren?
+Answer: Um Handlungen zu finden, die zu höheren Belohnungen führen
+Answer: Um den Bildschirm heller zu machen
+Answer: Um Dateien schneller zu speichern
+Answer: Um weniger Internet zu verbrauchen
+Explanation: Optimierung bedeutet, die bestmögliche Abfolge von Handlungen zu finden. Bildschirmhelligkeit oder Dateispeicherung sind rein technische Aufgaben. Internetverbrauch hängt nicht mit Entscheidungslogik zusammen.
+Label: Lernen und Entscheidungsfindung
 
 ---
 
-Question: Welcher dieser Texte ist eine Originalzitat von Göthe?
-Answer: A: "Zwei Seelen wohnen, ach! In meiner Brust. Die eine will sich von der andern trennen!"
-Answer: B: "In meiner Brust erheben sich zwei Stimmen, die eine drängt ins Licht, die andre will ins Schweigen sinken."
-Explanation: ...
+Question: Welches Optimierungsverfahren ist von der Evolution inspiriert und nutzt Mutation und Selektion?
+Answer: Genetische Algorithmen
+Answer: Dateisortierung
+Answer: Simulated Annealing
+Answer: Gradientenabstieg
+Explanation: Genetische Algorithmen imitieren Prinzipien der Evolution. Dateisortierung ist nur eine Programmfunktion. Simulated Annealing orientiert sich an physikalischen Prozessen. Gradientenabstieg ist zwar verbreitet, aber nicht evolutionsinspiriert.
+Label: Lernen und Entscheidungsfindung
 
 ---
 
-Question: Welcher dieser Texte ist ein Originalzitat von Rilke?
-Answer: A: "Herr: es ist Zeit. Der Sommer war sehr groß. Leg deinen Schatten auf die Sonnenuhren, und auf den Fluren laß die Winde los."
-Answer: B: "Der Sommer sinkt, als hätte er geschlaffen, der Herbst erwacht und füllt die stillen Räume mit Schatten, die sich über Felder legen"
-Explanation: ...
+Question: Welcher Ansatz ist die Grundlage für das Training moderner neuronaler Netze?
+Answer: Gradientengestütztes Lernen
+Answer: Münzwurf
+Answer: Manuelle Regeln
+Answer: Surfen im Internet
+Explanation: Moderne Netze werden mit Gradientenverfahren trainiert. Münzwurf wäre reiner Zufall. Manuelle Regeln sind Expertensysteme, keine Lernverfahren. Web-Browsing ist keine Lernstrategie.
+Label: Lernen und Entscheidungsfindung
 
 ---
 
-Question: Wenn eine KI im medizinschen Bereich eine falsche Diagnose stellt - wär trägt die Verantwortung?
-Answer: Der Arzt oder Hersteller
-Answer: Die KI selbst
-Explanation: Die Verantwortung liegt bei menschlichen Akteuren wie Ärzten oder Herstellern. Nicht bei der KI selbst.
+Question: Was ist die Grundidee einer "Greedy-Strategie"?
+Answer: Immer die Handlung mit der größten unmittelbaren Belohnung wählen
+Answer: Immer jedes Risiko vermeiden
+Answer: Immer das Verhalten von Menschen kopieren
+Answer: Immer auf die Zukunft warten
+Explanation: Eine Greedy-Strategie nimmt sofort den besten Schritt, auch wenn er später blockiert. Risiko vermeiden ist eine andere Strategie. Menschliches Kopieren ist kein systematisches Verfahren. Auf die Zukunft zu warten bringt keine Entscheidung.
+Label: Lernen und Entscheidungsfindung
 
 ---
 
-Question: Würdest du einer KI vertrauen, die über ein Gerichtsverfahren entscheidet?
-Answer: Nein, Entscheidungen im Rechtssystem sollte von Menschen getroffen werden
-Answer: Ja, KI ist neutral und immer fair
-Explanation: Rechtlichte Entscheidungen erfordern menschliches Urteilsvermögen, Ethik und Kontextbewusstsein - Eigenschaften, die KI nicht besitzt.
+Question: Was bedeutet "Exploration" in der KI?
+Answer: Neues Verhalten ausprobieren, um mehr zu lernen
+Answer: Eine neue Webseite besuchen
+Answer: Nach einem Schatz suchen
+Answer: Den Computer neu starten
+Explanation: Exploration heißt, die KI probiert aktiv Neues aus, um Informationen über ihre Umgebung zu gewinnen. Webseitenbesuch oder Schatzsuche sind Metaphern, haben aber nichts mit KI zu tun. Neustarten ist ein technischer Vorgang, kein Lernen.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Was zeigt die Angabe "87% Katze, 11% Hund, 2% Fisch"?
+Answer: Die KI schätzt Wahrscheinlichkeiten statt absoluter Wahrheiten
+Answer: Die KI hat zu viele Tiere gesehen
+Answer: Die KI rät ohne Sinn und Logik
+Answer: Die KI nimmt immer die höchste Zahl und ignoriert dabei alle weiteren Möglichkeiten
+Explanation: Solche Angaben sind Wahrscheinlichkeiten. "Zu viele Tiere" oder "raten" sind menschliche Bilder. Nur die höchste Zahl zu nehmen beschreibt nicht das eigentliche Vorgehen der KI.
+Label: Grundlagen
+
+---
+
+Question: Was bedeutet "Confidence" bei einer KI?
+Answer: Wie sicher die KI ihre Antwort darstellt, nicht ob sie stimmt
+Answer: Dass sie immer die Wahrheit kennt
+Answer: Dass sie alle Antworten zusätzlich von Menschen gegenprüfen lässt
+Answer: Dass sie echte Gefühle und Emotionen in die Antworten einbringt
+Explanation: Confidence bezieht sich nur auf die innere Sicherheit des Modells. Absolute Wahrheit oder menschliches Gegenprüfen gehören nicht zum System. Gefühle sind bei KIs nicht vorhanden.
+Label: Grundlagen
+
+---
+
+Question: Was ist der Unterschied zwischen einem Programm und einer KI?
+Answer: Programme liefern immer die gleiche Ausgabe, KI kann variieren
+Answer: Programme sind generell viel langsamer und weniger leistungsfähig als KI-Systeme
+Answer: KI braucht immer Internet, um zu funktionieren
+Answer: KI macht keine Fehler und liefert stets die richtige Antwort
+Explanation: Klassische Programme sind deterministisch, während KI probabilistisch arbeitet. Geschwindigkeit ist keine verlässliche Unterscheidung. Internet ist nicht zwingend nötig. Fehlerfreiheit gibt es in keiner Technologie.
+Label: Grundlagen
+
+---
+
+Question: Wovon sind neuronale Netze inspiriert?
+Answer: Vom menschlichen Gehirn, nur viel einfacher
+Answer: Vom Sonnensystem mit seinen Planetenbahnen
+Answer: Von Kabelnetzen, die Informationen transportieren
+Answer: Von DNA-Mutationen, die evolutionäre Vielfalt erklären sollen
+Explanation: Neuronale Netze sind stark vereinfachte Modelle, die sich am Gehirn orientieren. Sonnensystem und Kabel sind reine Analogien. DNA-Mutationen gehören zur Biologie, nicht zur Netzarchitektur.
+Label: Grundlagen
+
+---
+
+Question: Warum können KI-Antworten manchmal täuschen?
+Answer: Weil die KI ihre Unsicherheit oft nicht anzeigt
+Answer: Weil die KI zu viele Daten gleichzeitig speichert
+Answer: Weil die KI grundsätzlich alle Informationen gleich behandelt
+Answer: Weil die KI langsamer rechnet als ein normaler Computer
+Explanation: KI wirkt oft sehr selbstsicher, auch wenn sie nur Wahrscheinlichkeiten schätzt – deshalb ist das fehlende Anzeigen von Unsicherheit problematisch. Zu viele Daten speichern hat keinen direkten Bezug. "Alle Informationen gleich behandeln" beschreibt kein KI-Problem. Rechengeschwindigkeit beeinflusst die Glaubwürdigkeit nicht.
+Label: Grundlagen
+
+---
+
+Question: Was ist das "Black-Box-Problem" bei neuronalen Netzen?
+Answer: Wir wissen oft nicht genau, warum das Netz eine bestimmte Entscheidung trifft
+Answer: Das Netz verliert ständig seine gespeicherten Daten
+Answer: Der Computer schaltet sich unerwartet aus
+Answer: Die KI versteckt absichtlich ihre Antworten vor den Menschen
+Explanation: Das Black-Box-Problem beschreibt, dass Entscheidungswege in komplexen Netzen schwer nachvollziehbar sind. Datenverlust oder plötzliche Abstürze sind technische Probleme, aber kein Kennzeichen neuronaler Netze. Auch absichtliches Verstecken von Antworten ist kein technischer Fakt.
+Label: Grundlagen
+
+---
+
+Question: Was bedeutet "Overfitting" in der KI?
+Answer: Das Netz lernt die Trainingsdaten zu gut und scheitert bei neuen Daten
+Answer: Das Netz läuft aus dem Speicher
+Answer: Der Computer wird zu heiß beim Rechnen
+Answer: Die KI gibt ihre Antworten zu schnell aus
+Explanation: Overfitting heißt, dass ein Modell Muster auswendig lernt, ohne sie zu verallgemeinern. Speicherknappheit oder Hitze betreffen Hardware. Schnelligkeit der Ausgabe hat mit Overfitting nichts zu tun.
+Label: Grundlagen
+
+---
+
+Question: Was ist der Hauptzweck eines neuronalen Netzes?
+Answer: Muster in Daten zu erkennen und Vorhersagen zu treffen
+Answer: Große Dateien dauerhaft speichern
+Answer: Programme schneller laufen lassen
+Answer: Computer kühlen und Strom sparen
+Explanation: Neuronale Netze sind Werkzeuge zur Mustererkennung und Vorhersage. Speichern, Beschleunigen oder Kühlen sind Hardwareaufgaben, keine Lernziele.
+Label: Grundlagen
+
+---
+
+Question: Was ist "Artificial Narrow Intelligence (ANI)"?
+Answer: KI, die auf eine bestimmte Aufgabe spezialisiert ist
+Answer: KI, die alles kann, was Menschen können
+Answer: KI, die den Menschen in jeder Hinsicht übertrifft
+Answer: KI, die ohne jedes Training sofort funktioniert
+Explanation: ANI ist eine spezialisierte KI für einzelne Aufgaben. Allgemeine Intelligenz oder Superintelligenz gehören in andere Kategorien. Ohne Training sofortige Leistung ist unrealistisch.
+Label: Grundlagen
+
+---
+
+Question: Welches ist ein Beispiel für "Narrow AI"?
+Answer: Ein Programm, das Schach extrem gut spielt
+Answer: Ein Roboter, der jede menschliche Fähigkeit lernt
+Answer: Eine Maschine, die klüger ist als alle Menschen
+Answer: Ein selbstbewusster Assistent mit eigenen Gefühlen
+Explanation: Schach-KIs sind typische Beispiele für Narrow AI. Roboter mit allen Fähigkeiten, Supermaschinen oder selbstbewusste Assistenten gehören nicht zu dieser Kategorie.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Was bedeutet "Artificial General Intelligence (AGI)"?
+Answer: Eine hypothetische KI, die Probleme so flexibel lösen könnte wie Menschen
+Answer: Ein Schachcomputer
+Answer: Ein Spamfilter
+Answer: Ein Roboter-Staubsauger
+Explanation: AGI bezeichnet eine noch nicht existierende, menschenähnliche Intelligenz. Schachcomputer, Spamfilter oder Haushaltsroboter sind spezialisierte Systeme, keine AGI.
+Label: Grundlagen
+
+---
+
+Question: Was ist "Artificial Super Intelligence (ASI)"?
+Answer: Eine theoretische KI, die den Menschen in allen Bereichen übertrifft
+Answer: Ein Programm, das einfach schneller läuft als andere
+Answer: Eine KI, die niemals Fehler macht
+Answer: Ein Roboter mit echten menschlichen Gefühlen
+Explanation: ASI ist ein theoretisches Konzept einer übermenschlichen Intelligenz. Schnelligkeit oder Fehlerfreiheit allein machen keine Superintelligenz aus. Auch echte Emotionen sind nicht zwingend Teil einer solchen KI.
+Label: Grundlagen
+
+---
+
+Question: Was braucht die KI beim überwachten Lernen?
+Answer: Trainingsdaten mit Labels (richtigen Antworten)
+Answer: Unbegrenzten Speicherplatz
+Answer: Menschliche Gefühle
+Answer: Eine ständige Internetverbindung
+Explanation: Beim überwachten Lernen wird die KI mit Beispielen gefüttert, bei denen die richtige Lösung schon bekannt ist. Speicherplatz allein ersetzt keine Labels. Gefühle sind irrelevant. Eine Internetverbindung ist nicht nötig, wenn die Daten lokal vorliegen.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Welche Aufgabe passt zum überwachten Lernen?
+Answer: Erkennen, ob eine E-Mail Spam ist oder nicht
+Answer: Muster in Daten ohne Labels finden
+Answer: Ein Auto im Straßenverkehr steuern
+Answer: Musik völlig neu aus dem Nichts erzeugen
+Explanation: Spamfilter nutzen überwachte Klassifikatoren. Muster ohne Labels gehören zum unüberwachten Lernen. Autonomes Fahren ist eine komplexe Mischung verschiedener Methoden. Musik generieren fällt eher unter generative Modelle.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Wie funktioniert unüberwachtes Lernen?
+Answer: Es sucht Muster in Daten ohne Labels
+Answer: Es kopiert immer nur menschliche Eingaben
+Answer: Es lernt nur aus Belohnungen oder Strafen
+Answer: Es löscht unnötige Daten automatisch
+Explanation: Unüberwachtes Lernen erkennt Strukturen in nicht beschrifteten Daten. Reines Kopieren wäre kein Lernen. Belohnungen und Strafen gehören ins Verstärkungslernen. Daten löschen ist ein technischer Vorgang, kein Lernprinzip.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Welche Lernmethode nutzt Belohnung und Bestrafung?
+Answer: Verstärkungslernen
+Answer: Überwachtes Lernen mit vorbereiteten Labels
+Answer: Unüberwachtes Lernen mit reinen Mustern
+Answer: Zufälliges Raten ohne jede Grundlage
+Explanation: Beim Reinforcement Learning passt die KI ihr Verhalten durch Feedback über Belohnungen oder Strafen an. Labels sind nur im überwachten Lernen wichtig. Mustererkennung ohne Feedback ist unüberwacht. Zufall ohne Feedback wäre kein systematisches Lernen.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Was bedeutet halbüberwachtes Lernen?
+Answer: Eine kleine Menge gelabelter Daten zusammen mit vielen ungelabelten Daten nutzen
+Answer: Lernen nur mit Belohnung und Strafe ohne Beispiele
+Answer: Lernen ausschließlich mit vollständigen Labels
+Answer: Ganz ohne Daten trainieren
+Explanation: Semi-supervised kombiniert teure, aufwendig gelabelte Daten mit vielen unbeschrifteten Beispielen. Nur Belohnung und Strafe gehört zum Reinforcement Learning. Nur Labels = klassisches überwachte Lernen. Ohne Daten kann keine KI lernen.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Worum geht es bei "Natural Language Processing" (NLP)?
+Answer: Um das Verstehen und Erzeugen menschlicher Sprache
+Answer: Um das Erkennen von Gesichtern in Bildern
+Answer: Um die Steuerung physischer Roboter im Alltag
+Answer: Um das Spielen von Brettspielen durch Algorithmen
+Explanation: NLP befasst sich mit natürlicher Sprache, Text und Spracheingaben. Gesichtserkennung gehört zur Computer Vision. Robotersteuerung ist Robotik. Brettspiele fallen oft unter Planung und Reinforcement Learning.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Wofür wird "Computer Vision" eingesetzt?
+Answer: Zur Interpretation von Bildern und Videos
+Answer: Zum Führen von Gesprächen in natürlicher Sprache
+Answer: Zum Nachbilden menschlicher Gehirnfunktionen
+Answer: Zum automatischen Schreiben von Programmcode
+Explanation: Computer Vision ist für Bild- und Videoanalyse zuständig. Gespräche gehören zu NLP. Gehirn-Simulation fällt in die Neurowissenschaft. Codegenerierung ist eine generative KI-Aufgabe.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Was bedeutet "Multi-Modal AI"?
+Answer: Eine KI, die mit verschiedenen Datenarten arbeiten kann (z. B. Text, Bilder und Audio)
+Answer: Eine KI, die nur offline funktioniert
+Answer: Eine KI mit mehreren Persönlichkeiten gleichzeitig
+Answer: Eine KI, die mehrere Computer benötigt, um zu starten
+Explanation: Multi-Modal AI verarbeitet unterschiedliche Eingabemodalitäten wie Text, Bild und Ton. Offline-Nutzung, Persönlichkeiten oder mehrere Computer sind keine fachliche Definition.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Was ist der Hauptunterschied zwischen AGI und GPAI?
+Answer: AGI ist ein Forschungskonzept, GPAI eine rechtliche Definition
+Answer: AGI funktioniert immer, GPAI nicht
+Answer: GPAI bedeutet, dass die KI Gefühle hat
+Answer: AGI bezieht sich ausschließlich auf Roboterkörper
+Explanation: AGI (Artificial General Intelligence) ist ein theoretisches Ziel, GPAI ein juristischer Begriff im EU AI Act. „Gefühle“ und „Roboterkörper“ sind Missverständnisse. „Funktioniert immer“ ist Unsinn.
+Label: Grundlagen
+
+---
+
+Question: Was sagt der EU AI Act über GPAI-Modelle?
+Answer: Sie unterliegen besonderen Regeln zur Sicherheit und Missbrauchsprävention
+Answer: Sie müssen immer quelloffen sein, egal wer sie entwickelt
+Answer: Sie müssen menschenähnlich aussehen, um zugelassen zu werden
+Answer: Sie dürfen keine Bilder oder Texte erzeugen
+Explanation: GPAI-Modelle haben im EU-Recht zusätzliche Auflagen zur Transparenz und Sicherheit. Open Source ist nicht verpflichtend, menschenähnliches Aussehen ist irrelevant, und generative Fähigkeiten sind erlaubt.
+Label: Recht und Gesellschaft
+
+---
+
+Question: Welches dieser Systeme ist ein Beispiel für ein GPAI-Modell nach dem EU AI Act?
+Answer: GPT-4
+Answer: Ein Taschenrechner
+Answer: Ein Schachcomputer
+Answer: Eine Waschmaschine
+Explanation: GPT-4 erfüllt die Definition von GPAI durch seine Vielseitigkeit. Ein Taschenrechner und Schachcomputer sind spezialisierte Systeme. Waschmaschinen sind gar keine KI.
+Label: Recht und Gesellschaft
+
+---
+
+Question: Warum können Artikel über AGI und GPAI verwirrend sein?
+Answer: Weil die Begriffe vor dem EU AI Act oft synonym verwendet wurden
+Answer: Weil KI ihre eigenen Definitionen ständig ändert
+Answer: Weil nur Wissenschaftler diese Begriffe benutzen dürfen
+Answer: Weil Computer keine Zeitungen lesen können
+Explanation: Vor der rechtlichen Festlegung wurden AGI und GPAI oft durcheinander genutzt. KI definiert sich nicht selbst, Begriffe sind frei verwendbar, und Zeitungslesen ist für die Begriffsverwendung irrelevant.
+Label: Grundlagen
+
+---
+
+Question: Warum können nur wenige Firmen die größten KI-Modelle trainieren?
+Answer: Weil das Training enorme Rechenleistung und spezialisierte Rechenzentren benötigt
+Answer: Weil kleine Firmen generell keine KI mögen
+Answer: Weil KI ausschließlich im Weltraum trainiert werden muss
+Answer: Weil Heimcomputer zu schnell wären und die Modelle zerstören könnten
+Explanation: Das Training benötigt riesige Datenmengen und Hardware, die sich nur große Firmen leisten können. Abneigung, Weltraumtraining oder „zu schnelle PCs“ sind Unsinn.
+Label: Recht und Gesellschaft
+
+---
+
+Question: Was ist der Unterschied zwischen Training und Inferenz bei KI?
+Answer: Training bedeutet Lernen aus Daten (sehr rechenintensiv), Inferenz ist das Anwenden zur Beantwortung (weniger aufwendig)
+Answer: Training macht die KI größer, Inferenz macht sie kleiner
+Answer: Training wird von Menschen durchgeführt, Inferenz nur von Robotern
+Answer: Es gibt überhaupt keinen Unterschied
+Explanation: Training passt die Parameter des Modells an, während Inferenz die Nutzung des Modells ist. Größenänderungen sind kein Lernprozess. Mensch/Roboter-Trennung ist falsch. „Kein Unterschied“ ist schlicht inkorrekt.
+Label: Grundlagen
+
+---
+
+Question: Welche Art von KI-System ist nach dem EU AI Act komplett verboten?
+Answer: Social-Scoring-Systeme
+Answer: Spamfilter
+Answer: Chatbots
+Answer: Medizinische Diagnosewerkzeuge
+Explanation: Social Scoring gilt als inakzeptables Risiko und ist in der EU verboten. Spamfilter und Chatbots sind erlaubt, aber reguliert. Medizinische Diagnose ist Hochrisiko, aber nicht verboten.
+Label: Recht und Gesellschaft
+
+---
+
+Question: Welche Kategorie von KI gilt als "hohes Risiko"?
+Answer: Systeme in Bereichen wie Medizin oder Justiz
+Answer: Spiele und Unterhaltung
+Answer: Spamfilter
+Answer: Online-Empfehlungen beim Einkauf
+Explanation: Hochrisiko betrifft Systeme, die gravierende Folgen für Menschen haben, etwa in Justiz oder Gesundheit. Unterhaltung, Spamfilter oder Online-Shops haben ein geringeres Risiko.
+Label: Recht und Gesellschaft
+
+---
+
+Question: Was ist für "begrenztes Risiko"-Systeme wie Chatbots vorgeschrieben?
+Answer: Transparenzpflichten
+Answer: Überhaupt keine Regeln
+Answer: Direkte Kontrolle durch den Staat
+Answer: Nur offline nutzbar
+Explanation: Systeme mit begrenztem Risiko müssen ihre KI-Nutzung klar machen. „Keine Regeln“ stimmt nicht, ebenso wenig eine Zwangskontrolle. Offline-Nutzung ist keine gesetzliche Vorgabe.
+Label: Recht und Gesellschaft
+
+---
+
+Question: Wozu dient eine "Sandbox" in der KI-Entwicklung?
+Answer: Um KI in einer sicheren, isolierten Umgebung zu testen
+Answer: Um Internetverbindungen schneller zu machen
+Answer: Um die KI kreativer wirken zu lassen
+Answer: Um den Stromverbrauch direkt zu senken
+Explanation: Eine Sandbox erlaubt gefahrloses Testen vor dem Einsatz. Internetgeschwindigkeit, Kreativität oder Energieverbrauch sind nicht das Ziel.
+Label: Risiken und Ethik
+
+---
+
+Question: Was wollen "Bias-Checks" in KI-Systemen verhindern?
+Answer: Diskriminierung und ungerechte Ergebnisse
+Answer: Lange Antwortzeiten
+Answer: Zu viele Nutzerfragen
+Answer: Übermäßige Datenspeicherung
+Explanation: Bias-Checks sollen Vorurteile und Diskriminierung verhindern. Antwortzeiten oder viele Nutzerfragen sind Performance-Themen. Datenspeicherung betrifft eher Datenschutz.
+Label: Risiken und Ethik
+
+---
+
+Question: Was war das erste von Asimovs drei Robotergesetzen?
+Answer: Ein Roboter darf keinem Menschen schaden oder durch Untätigkeit Schaden zulassen
+Answer: Ein Roboter muss immer die Wahrheit sagen
+Answer: Ein Roboter darf niemals Strom benutzen
+Answer: Ein Roboter darf seine Fabrik nicht verlassen
+Explanation: Das erste Gesetz schützt Menschen vor Schaden. Wahrheitspflicht, Stromnutzung oder Fabrikgebot kommen in Asimovs Gesetzen nicht vor.
+Label: Risiken und Ethik
+
+---
+
+Question: Warum sind Asimovs drei Gesetze für reale KI nicht praktisch?
+Answer: Weil Begriffe wie "Schaden" für Maschinen zu ungenau sind
+Answer: Weil Roboter sich generell weigern, Regeln zu befolgen
+Answer: Weil Gesetze nur für Menschen gelten dürfen
+Answer: Weil Computer keine Literatur kennen
+Explanation: Maschinen können vage Begriffe nicht eindeutig interpretieren. Roboter „weigern“ sich nicht, sondern folgen Programmen. Gesetze können durchaus auch Technik regulieren. Literaturkenntnis ist irrelevant.
+Label: Risiken und Ethik
+
+---
+
+Question: Was ist ein "System Prompt"?
+Answer: Eine versteckte Anweisung, die das Standardverhalten der KI festlegt
+Answer: Eine Liste von Quellen für die Antwort
+Answer: Die Berufsbezeichnung des Nutzers
+Answer: Ein rechtlicher Haftungshinweis
+Explanation: System Prompts steuern das Grundverhalten im Hintergrund. Quellenlisten, Jobtitel oder Disclaimer sind keine System Prompts.
+Label: Grundlagen
+
+---
+
+Question: Was bewirkt eine Erhöhung der "Temperatur"?
+Answer: Antworten werden vielfältiger und kreativer, aber weniger konsistent
+Answer: Die KI bekommt mehr Emotionen
+Answer: Die Hardware läuft schneller
+Answer: Die Antworten sind garantiert korrekt
+Explanation: Temperatur steuert die Variabilität der Textgenerierung. Emotionen sind ein Missverständnis. Hardwaregeschwindigkeit ist unabhängig. Korrektheit ist nie garantiert.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Was beschreibt das "Context Window"?
+Answer: Die maximale Textmenge, die ein Modell gleichzeitig berücksichtigen kann
+Answer: Die Anzahl der Nutzer in einem Chat
+Answer: Die Größe der Internetverbindung
+Answer: Die Menge an Bildern, die gespeichert werden kann
+Explanation: Das Context Window begrenzt, wie viel Text die KI "im Blick" haben kann. Nutzerzahl, Verbindung oder Bildspeicherung haben nichts damit zu tun.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Was bedeutet "Fine-Tuning"?
+Answer: Weiteres Training eines Modells mit neuen Beispielen zur Spezialisierung
+Answer: Die App neu starten
+Answer: Längere Prompts in den Chat schreiben
+Answer: Das Datenset komprimieren, um Speicherplatz zu sparen
+Explanation: Fine-Tuning bedeutet, ein bestehendes Modell gezielt mit neuen Daten nachzutrainieren. Neustart oder längere Eingaben verändern das Modell nicht. Datenset-Komprimierung spart nur Speicher, verbessert aber nicht die Spezialisierung.
+Label: Lernen und Entscheidungsfindung
+
+---
+
+Question: Warum werden beim Training separate Validierungsdaten genutzt?
+Answer: Um zu prüfen, ob das Modell auch bei unbekannten Daten funktioniert
+Answer: Um das Training schneller zu machen
+Answer: Um die Größe des Datensatzes zu erhöhen
+Answer: Um den Stromverbrauch während des Trainings zu senken
+Explanation: Validierungsdaten prüfen die Fähigkeit zur Generalisierung. Geschwindigkeit, Datensatzgröße oder Stromverbrauch hängen nicht vom Validierungsset ab.
+Label: Grundlagen
+
+---
+
+Question: Warum haben viele kommerzielle KI-Systeme Inhaltsfilter?
+Answer: Um schädliche oder illegale Inhalte zu blockieren und Gesetze einzuhalten
+Answer: Um Antworten kürzer zu machen
+Answer: Um die Berechnungen der KI zu beschleunigen
+Answer: Um weniger Speicher im System zu verbrauchen
+Explanation: Filter sollen Nutzer schützen und rechtliche Vorgaben einhalten. Kürze, Geschwindigkeit oder Speicher sind nicht der Hauptzweck.
+Label: Risiken und Ethik
+
+---
+
+Question: Welche Kategorie blockieren Filter typischerweise?
+Answer: Anleitungen zu illegalem Verhalten
+Answer: Filmempfehlungen aus Streaming-Plattformen
+Answer: Wettervorhersagen für verschiedene Regionen
+Answer: Ergebnisse von Sportereignissen
+Explanation: Filter greifen vor allem bei Gewalt, illegalem Verhalten oder Hassrede. Filmempfehlungen, Wetter oder Sport sind unproblematische Inhalte.
+Label: Risiken und Ethik
+
+---
+
+Question: Was ist ein zentrales Problem bei keyword-basierten Filtern?
+Answer: Sie können harmlose Diskussionen blockieren oder leicht umgangen werden
+Answer: Sie finden garantiert jede gefährliche Nachricht
+Answer: Sie machen das Lernen des Modells automatisch schneller
+Answer: Sie übersetzen Inhalte zuverlässig in andere Sprachen
+Explanation: Keyword-Filter sind ungenau und leicht zu umgehen. Sie garantieren keine Vollständigkeit. Modelltraining beschleunigen oder Übersetzung leisten sie nicht.
+Label: Risiken und Ethik
+
+---
+
+Question: Warum kann Filterung politisch riskant sein?
+Answer: Modelle aus manchen Ländern können gezielt für Propaganda angepasst werden
+Answer: Filter verbessern automatisch die Demokratie
+Answer: Filter entfernen ausschließlich Spam-Nachrichten
+Answer: Filter machen Modelle kreativer in ihren Antworten
+Explanation: Filter können von Regierungen oder Anbietern für politische Zwecke missbraucht werden. Demokratie stärken, Spam oder Kreativität sind keine Hauptprobleme.
+Label: Risiken und Ethik
+
+---
+
+Question: Was ist eine Gefahr, wenn eine KI sehr schwache oder keine Filter hat?
+Answer: Sie kann bei Aufforderung gewaltvolle oder hasserfüllte Inhalte erzeugen
+Answer: Sie läuft viel langsamer als andere Modelle
+Answer: Sie beantwortet grundsätzlich keine Fragen
+Answer: Sie weigert sich, lokal auf einem Computer zu starten
+Explanation: Fehlende Filter erhöhen das Risiko gefährlicher Inhalte. Langsamkeit, Verweigerung oder Startprobleme sind keine typischen Folgen.
+Label: Risiken und Ethik
+
+---
+
+Question: Wie können Modelle für Propaganda missbraucht werden?
+Answer: Indem man sie so trainiert oder feinabstimmt, dass sie bestimmte politische Ansichten bevorzugen
+Answer: Indem man sie dazu bringt, alte Daten zu vergessen
+Answer: Indem man nur die Temperatureinstellung erhöht
+Answer: Indem man ihr Kontextfenster stark reduziert
+Explanation: Durch gezieltes Training können Modelle politische Tendenzen verstärken. Daten löschen, Temperatur oder Kontextfenster betreffen nur Technik und beeinflussen keine politische Ausrichtung.
+Label: Risiken und Ethik
+
+---
+
+Question: Was bedeutet "Halluzination" in der KI?
+Answer: Die KI erzeugt Inhalte, die wie Fakten klingen, aber falsch sind
+Answer: Die KI wird plötzlich selbstbewusst
+Answer: Die KI verweigert jede Antwort
+Answer: Die KI zeigt anstelle von Text nur Bilder
+Explanation: Halluzinationen sind falsche, aber überzeugend formulierte Antworten. Selbstbewusstsein, Antwortverweigerung oder Bilderausgabe haben damit nichts zu tun.
+Label: Grundlagen
+
+---
+
+Question: Warum ist der Einsatz von KI in Berufen wie Ärzten oder Therapeuten problematisch?
+Answer: Weil Menschen der KI auch dann zu stark vertrauen könnten, wenn sie Fehler macht
+Answer: Weil KI immer alle Fragen verweigert
+Answer: Weil KI nicht auf modernen Computern läuft
+Answer: Weil KI niemals Rechtschreibfehler macht
+Explanation: Übermäßiges Vertrauen ist riskant, besonders in sensiblen Bereichen. Verweigerung, technische Inkompatibilität oder perfekte Rechtschreibung sind keine realen Kernprobleme.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Welche Art von Sprache ist für KI besonders schwer zu verstehen?
+Answer: Ironie, Sarkasmus und kulturelle Anspielungen
+Answer: Zahlen und Datumsangaben
+Answer: Einfache Begrüßungen
+Answer: Wetterberichte
+Explanation: Ironie und kulturelle Kontexte sind schwer, da sie implizites Wissen erfordern. Zahlen, Begrüßungen oder Wetter sind meist leicht zu verarbeiten.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Warum werden traditionelle Algorithmen manchmal einer KI vorgezogen?
+Answer: Weil sie transparent und vorhersehbar sind
+Answer: Weil sie grundsätzlich schneller arbeiten
+Answer: Weil sie keinen Strom verbrauchen
+Answer: Weil sie ganz ohne Daten auskommen
+Explanation: Klassische Algorithmen sind nachvollziehbar und stabil. Geschwindigkeit, Stromfreiheit oder Datenlosigkeit sind falsche Annahmen.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Was ist eine wichtige Einschränkung von KI beim Erkennen von Inhalten?
+Answer: Sie kann einschätzen, ob etwas generiert oder manipulativ wirkt, aber nicht, ob es faktisch wahr ist
+Answer: Sie lehnt grundsätzlich jeden Text ab
+Answer: Sie kann nur sehr kurze Sätze überprüfen
+Answer: Sie zeigt niemals ihre Antworten an
+Explanation: KI kann Wahrscheinlichkeiten und Muster prüfen, aber nicht objektive Wahrheit feststellen. Alles ablehnen oder nie anzeigen wäre praxisfern. Nur kurze Sätze sind keine echte Einschränkung.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Welches Merkmal kann auf ein KI-generiertes Bild hinweisen?
+Answer: Ungewöhnliche Hände oder verzerrter Text
+Answer: Auffällig helle Farben
+Answer: Kleine Dateigröße
+Answer: Landschaften im Hintergrund
+Explanation: Hände und Schrift sind klassische Schwachpunkte vieler Bildmodelle. Farben, Dateigröße oder Landschaften sind kein verlässlicher Hinweis.
+Label: Anwendungen und Fähigkeiten
+
+---
+
+Question: Was bedeutet das "Alignment-Problem" in der KI?
+Answer: Das Risiko, dass eine mächtige KI Ziele verfolgt, die nicht mit menschlichen Werten übereinstimmen
+Answer: Die Schwierigkeit, Hardware richtig zu verbinden
+Answer: Das Problem, KI-Antworten kürzer zu machen
+Answer: Das Ausrichten von Text in einem Dokument
+Explanation: Alignment betrifft die Übereinstimmung von KI-Zielen mit menschlichen Interessen. Hardware, Textlänge oder Dokumentformatierung haben damit nichts zu tun.
+Label: Risiken und Ethik
+
+---
+
+Question: Warum vermuten einige Forscher, dass KI bald ein Plateau erreicht?
+Answer: Weil hochwertige Trainingsdaten im Internet knapp werden
+Answer: Weil Computer bald nicht mehr funktionieren
+Answer: Weil Menschen das Interesse an KI verlieren
+Answer: Weil das Internet zu langsam geworden ist
+Explanation: Das Plateau bezieht sich auf Datenqualität als limitierenden Faktor. Defekte Computer, fehlendes Interesse oder Internetgeschwindigkeit sind keine Kernprobleme.
+Label: Grundlagen
+
+---
+
+Question: Was bedeutet "Point of No Return" in KI-Debatten?
+Answer: Die Vorstellung, dass sich eine selbstverbessernde KI irgendwann nicht mehr von Menschen stoppen lässt
+Answer: Der Moment, in dem KI eine Frage nicht beantwortet
+Answer: Ein Zeitpunkt im Training, an dem Daten gelöscht werden
+Answer: Eine Situation, in der das Internet ausfällt
+Explanation: Der Begriff beschreibt eine hypothetische Schwelle unkontrollierbarer Selbstverbesserung. Antwortverweigerung, Datenlöschung oder Internetausfall sind etwas ganz anderes.
+Label: Risiken und Ethik
+
+---
+
+Question: Welches dieser Bilder ist echt?
+Media: Nyfii_REAL_3DPrinter.jpg
+Media: Nyfii_FAKE_3DPrinter.jpg
+Explanation: Die Rolle im Fake Bild "schwebt" in der Halterung.
+Label: Bild-Erkennung
+
+---
+
+Question: Ist dieses Bild echt?
+Media: Nyfii_FAKE_GroceryShopping.jpg
+Answer: Nein
+Answer: Ja
+Explanation: Der Eierkarton verschmilzt mit dem Einkaufswagen. Die Haupt hat keine Struktur.
+Label: Bild-Erkennung
+
+---
+
+Question: Ist dieses Bild echt?
+Media: Nyfii_FAKE_Car.jpg
+Answer: Nein
+Answer: Ja
+Explanation: Auf dem Kennzeichen ist bei dem Eurofeld eine 4.
+Label: Bild-Erkennung
+
+---
+
+Question: Welches dieser Bilder ist echt?
+Media: Nyfii_REAL_Cat.jpg
+Media: Nyfii_FAKE_Cat.jpg
+Explanation: Im Fell der echten Katze sieht mal viel mehr Struktur.
+Label: Bild-Erkennung
+
+---
+
+Question: Welches dieser Bilder ist echt?
+Media: Nyfii_REAL_Code.jpg
+Media: Nyfii_FAKE_Code.jpg
+Explanation: Der falsche Code ist inkonsistent in den Tags.
+Label: Bild-Erkennung
+
+---
+
+Question: Welches dieser Bilder ist echt?
+Media: Nyfii_REAL_Crescione.jpg
+Media: Nyfii_FAKE_Crescione.jpg
+Explanation: Der falsche Crescione hat eine unnatürliche Farbe und eine Körnung im Bild.
+Label: Bild-Erkennung
+
+---
+
+Question: Welches dieser Bilder ist echt?
+Media: Nyfii_REAL_Cube.jpg
+Media: Nyfii_FAKE_Cube.jpg
+Explanation: Der falsche Würfel hat ein Oranges-Oranges Kantenteil, was so nicht möglich ist.
+Label: Bild-Erkennung
+
+---
+
+Question: Welches dieser Bilder ist echt?
+Media: Nyfii_REAL_GreenScreen.jpg
+Media: Nyfii_FAKE_GreenScreen.jpg
+Explanation: Schatten.
+Label: Bild-Erkennung
+
+---
+
+Question: Ist dieses Bild echt?
+Media: Nyfii_FAKE_StreetCrossing.jpg
+Answer: Nein
+Answer: Ja
+Explanation: Die Verkehrsschilder sind komplett falsch.
+Label: Bild-Erkennung.
+
+---
+
+Question: Ist dieses Bild echt?
+Media: Nyfii_FAKE_TrainLounge.jpg
+Answer: Nein
+Answer: Ja
+Explanation: Gesichter.
+Label: Bild-Erkennung.
+
+---
+
+Question: Ist dieses Bild echt?
+Media: Nyfii_REAL_Monopoly.jpg
+Answer: Ja
+Answer: Nein
+Explanation: :)
+Label: Bild-Erkennung.
+
+---
+
+Question: Ist dieses Bild echt?
+Media: Nyfii_REAL_Tower.jpg
+Answer: Ja
+Answer: Nein
+Explanation: :)
+Label: Bild-Erkennung.
