@@ -94,3 +94,73 @@ Answer: Das Bild ist echt
 Answer: Das Bild ist KI-generiert
 Explanation: Die beiden sind echt und heißen Lola und Schröder <3.
 Label: Bilderkennung
+
+---
+
+# 1 Media + 2 Answers
+Media: Mathias_REAL_CentralPark.jpg
+Question: Ist das Bild KI-generiert oder echt?
+Answer: Das Bild ist echt
+Answer: Das Bild ist KI-generiert
+Explanation: Das ist der Central Park in New York City.
+Label: Bilderkennung
+
+---
+
+# 1 Media + 2 Answers
+Media: Mathias_REAL_Katzen.jpg
+Question: Ist das Bild KI-generiert oder echt?
+Answer: Das Bild ist echt
+Answer: Das Bild ist KI-generiert
+Explanation: Die beiden sind echt und waren sehr hungrig.
+Label: Bilderkennung
+
+---
+
+# 1 Media + 2 Answers
+Media: Mathias_REAL_Katzentempel.jpg
+Question: Ist das Bild KI-generiert oder echt?
+Answer: Das Bild ist echt
+Answer: Das Bild ist KI-generiert
+Explanation: Das ist ein echter buddhistischer Tempel in Tokio, Japan namens "Gotoku-ji".
+Label: Bilderkennung
+
+---
+
+# 1 Media + 2 Answers
+Media: Mathias_REAL_Lada.jpg
+Question: Ist das Bild KI-generiert oder echt?
+Answer: Das Bild ist echt
+Answer: Das Bild ist KI-generiert
+Explanation: Das ist eine echte Lada.
+Label: Bilderkennung
+
+---
+
+# 1 Media + 2 Answers
+Media: Mathias_REAL_Regenbogen.jpg
+Question: Ist das Bild KI-generiert oder echt?
+Answer: Das Bild ist echt
+Answer: Das Bild ist KI-generiert
+Explanation: Das ist ein echter Regenbogen.
+Label: Bilderkennung
+
+---
+
+# 1 Media + 2 Answers
+Media: Mathias_REAL_Tontasse.JPG
+Question: Ist das Bild KI-generiert oder echt?
+Answer: Das Bild ist echt
+Answer: Das Bild ist KI-generiert
+Explanation: Das sind echte Tontassen.
+Label: Bilderkennung
+
+---
+
+# 1 Media + 2 Answers
+Media: Mathias_REAL_Welpe.JPG
+Question: Ist das Bild KI-generiert oder echt?
+Answer: Das Bild ist echt
+Answer: Das Bild ist KI-generiert
+Explanation: Das ist ein echter Beagle-Welpe.
+Label: Bilderkennung
